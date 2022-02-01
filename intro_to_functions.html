@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro To Functions</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+
+
+    //Function Declaration:
+
+        //Code below defines the function
+        function log() {
+            console.log("Function declaration successfully ran");
+        }
+        //Code below calls the function
+        log();
+
+    //Function Expression:
+
+        //Code below defines function
+         var logSomeStuff = function(){
+             console.log("Function expression successfully called");
+         }
+        //Code below calls the function
+         logSomeStuff();
+
+    //Return statement:
+
+        //Code below defines function and return the value of 5
+        function doSomething(){
+            console.log("Function doSomething ran successfully");
+            return "Return value of the doSomething function";
+        }
+        //Code below calls the function and logs the return value
+        console.log(doSomething());
+
+        //Code below calls the function and stores the return value in a variable, which is then logged in the console.
+        var returnValue = doSomething();
+        console.log(returnValue);
+
+        //Code below logs the function definition instead of the return value because we are logging the entire function instead of calling the function and getting the return value
+
+        function six(){
+            return 6;
+        }
+        console.log(six)
+
+    //Arguments and Parameters
+
+        //Defining a parameter; function below returns whatever input is provided
+        function returnInput(x){
+            return x
+        }
+        console.log(returnInput("hiiiiii"))
+
+        //Function below takes in a number and returns the number doubled
+        function doubleTheNum(input){
+            console.log(input)
+            return input * 2;
+        }
+        //If the input is left blank, the input is undefined
+        console.log(doubleTheNum());
+
+</script>
+</body>
+</html>

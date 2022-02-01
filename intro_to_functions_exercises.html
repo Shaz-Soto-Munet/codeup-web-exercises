@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro To Functions Exercises</title>
+</head>
+<body>
+    <script>
+        "use strict";
+        // ================ !! Mini-exercises !!
+
+        // Write a function, returnFive, that returns the number five. No inputs should be defined.
+
+        function returnFive() {
+            return 5;
+        }
+
+
+        // Write a function, isFive, that takes in an input and returns the boolean value true if the passed argument is the number 5 or the string "5". Return false otherwise.
+
+        // 1. What input does the function take in?
+        //any input
+        // 2. What does the function return?
+        //boolean
+
+        function isFive(input){
+            return input == 5
+        }
+
+        console.log(isFive(5));
+
+        // Write a function, isShortWord, that takes in a string and returns the boolean value true if the passed argument is shorter than 5 characters. Return false otherwise.
+
+        // 1. What input does the function take in? (how many inputs / what type?)
+        //string
+        // 2. What does function return? (what is the type)
+        //boolean
+
+        function isShortWord(input){
+            return input.length < 5;
+        }
+
+        console.log(isShortWord("who's"));
+
+        // Write a function, isSameLength, that takes in two string inputs and returns the boolean value true if the passed arguments are the same length. Return false otherwise.
+
+        // 1. What is the input?
+        // two string inputs
+        // 2. What is the function outputting?
+        // boolean
+
+        function isSameLength(string1,string2){
+            return string1.length == string2.length;
+        }
+
+        console.log(isSameLength("same", "word"));
+
+        // Write a function, getSmallerSegment, that takes in a string and a number input. The function should return a substring of the first argument that is as many characters long as the second argument in lowercase.
+
+        // example input: getSmallerSegment("Codeup", 3)
+        // example output: "cod"
+
+        // 1. What is the input? a string and a number
+        // 2. What is the return value? a string
+
+        function getSmallerSegment(string, length){
+            return string.slice(0, length).toLowerCase();
+        }
+        console.log(getSmallerSegment("STRING", 3));
+
+        // Refactor the following code to use functions...
+        /*
+            var x = 2;
+            var y = 4;
+            var totalXY = x + y;
+            console.log('The result of num1 + num2 is: ' + totalXY);
+            var a = 5;
+            var b = 1;
+            var totalAB = a + b;
+            console.log('The result of num1 + num2 is: ' + totalAB);
+            var c = 10;
+            var d = 5;
+            var totalCD = c + d;
+            console.log('The result of num1 + num2 is: ' + totalCD);
+         */
+
+        function addAndLog(num1, num2){
+            var total = num1 + num2;
+            console.log("The result of " + num1 + " + " + num2 + " is " + total);
+            return total
+        }
+        addAndLog(6,2)
+
+
+    </script>
+</body>
+</html>
