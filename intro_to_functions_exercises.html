@@ -50,10 +50,10 @@
         // boolean
 
         function isSameLength(string1,string2){
-            return string1.length == string2.length;
+            return string1.length === string2.length;
         }
 
-        console.log(isSameLength("same", "word"));
+        console.log(isSameLength("",""));
 
         // Write a function, getSmallerSegment, that takes in a string and a number input. The function should return a substring of the first argument that is as many characters long as the second argument in lowercase.
 
@@ -64,9 +64,9 @@
         // 2. What is the return value? a string
 
         function getSmallerSegment(string, length){
-            return string.slice(0, length).toLowerCase();
+            return string.toLowerCase().slice(0, length);
         }
-        console.log(getSmallerSegment("STRING", 3));
+        console.log(getSmallerSegment("STRING", 4));
 
         // Refactor the following code to use functions...
         /*
@@ -87,10 +87,11 @@
         function addAndLog(num1, num2){
             var total = num1 + num2;
             console.log("The result of " + num1 + " + " + num2 + " is " + total);
-            return total
+            return total;
         }
-        addAndLog(6,2)
-
+        addAndLog(2,4);
+        addAndLog(5,1);
+        addAndLog(10,5);
 
     </script>
 </body>
