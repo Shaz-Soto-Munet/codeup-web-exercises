@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conditionals Lecture</title>
+</head>
+<body>
+
+<h1>Conditionals Lecture</h1>
+
+<script>
+
+    "use strict";
+
+    // ======================= IF STATEMENTS
+
+    /*
+
+         if (condition) {
+            action; // only runs if condition true
+         }
+
+    */
+
+
+    // var isAdmin = true;
+    // if (isAdmin) {
+    //     alert('Displaying admin panel...');
+    // }
+
+
+    // ======================= IF STATEMENT WITH ELSE
+
+    /*
+
+         if (condition) {
+             action; // runs if condition true
+         } else {
+             action; // runs if condition false
+         }
+
+    // */
+    // var productInStock = false;
+    //
+    // if (productInStock) {
+    //     alert('Display a purchase button');
+    // } else {
+    //     alert('Display a message that says "OUT OF STOCK"');
+    // }
+    //
+
+
+
+
+
+    // ======================= IF STATEMENTS WITH ELSE IF
+
+    /*
+
+        if (condition1) {
+            action; // runs if condition true
+        } else if (condition2) {
+            action; // runs if condition 1 is false and condition 2 is true
+        } else {
+            action; // runs if condition 1 and condition 2 are false
+        }
+
+    */
+
+    var weather = 'sunny';
+
+
+
+    // ======================= NESTED CONDITIONALS
+
+    var weatherCondition = 'sunny';
+    var temp = '';
+
+    // ======================= TERNARY OPERATORS
+
+    // use when only one condition is being evaluated and may be only true or false
+
+    /*
+
+         (condition) ? returnValueIfTrue : returnValueIfFalse
+
+    */
+
+    // If / Else
+
+    // var someNumber = 10;
+
+    // if (someNumber % 5 === 0) {
+    //     divisibleByFive = someNumber + " is divisible by 5.";
+    // } else {
+    //     divisibleByFive = someNumber + " is not divisible by 5.";
+    // }
+
+
+
+    // alert(divisibleByFive);
+    // Refactor
+
+    // var divisibleByFive = (someNumber % 5 === 0) ? "Yes" : "No";
+
+
+
+
+
+
+    // ======================= SWITCH STATEMENTS
+
+    // use a switch statement if a single condition may have multiple possible values
+
+    /*
+
+        switch(condition) {
+
+            case someOutput1:
+                ...do something;
+                break;
+            case someOutput2:
+                ...do something;
+                break;
+            (can continue to add cases)
+            default:
+                this will happen if no other case values match the switch condition value;
+
+        }
+
+    */
+
+    // var bondFilm = "Goldfinger";
+    //
+    // if (bondFilm === "Dr. No") {
+    //     console.log("Fantastic!");
+    // } else if (bondFilm === "From Russia With Love") {
+    //     console.log("Exploding barrels!");
+    // } else if (bondFilm === "Goldfinger") {
+    //     console.log("\"I expect you to die, Mr. Bond.\"");
+    // } else if (bondFilm === "Thunderball") {
+    //     console.log("Kinda long.");
+    // } else if (bondFilm === "You Only Live Twice") {
+    //     console.log("One of the better theme songs.");
+    // } else {
+    //     console.log("That's not one of the first five Bond films.");
+    // }
+
+
+    // refactor
+
+
+
+
+
+    // ------------------------------Extra Practice Exercises---------------------------------
+
+    // CONDITIONALS MINI-EXERCISES
+
+    // 1. Create conditional logic to represent the following scenario...
+    // If the car is locked, alert 'will open', otherwise, alert 'will not open
+
+    var carLocked = false;
+    if (carLocked){
+        // alert("Will not open.")
+    } else {
+        // alert("Will open.")
+    }
+
+
+    // 2. Write a function that takes in a string and returns a message based on the string length:
+
+    // if the string is no characters, return "Empty string"
+    // if the string is one character long, return "One character long"
+    // if the string is two characters long, return "Two characters long"
+    // Otherwise, return, "That is a long string!"
+
+    function stringLength(string){
+        if (string.length === 0){
+            return "Empty string.";
+        } else if (string.length === 1) {
+            return "One character long.";
+        } else if (string.length === 2){
+            return "Two characters long.";
+        } else {
+            return "That is a long string.";
+        }
+    }
+
+    console.log(stringLength("Hello"));
+
+
+    // 3. Refactor the Following Code into a Ternary Operator:
+
+    /*
+        var message;
+        var num = 5;
+        if (num < 10) {
+            message = 'Num less than 10';
+        } else {
+            message = 'Num more than 10';
+        }
+    */
+
+    var num = 987;
+    var message = (num < 10) ? "Num less than 10." : "Num more than 10.";
+    console.log(message);
+
+
+
+</script>
+
+</body>
+</html>

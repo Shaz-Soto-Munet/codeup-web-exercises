@@ -22,7 +22,7 @@ function sayHello(name){
  */
 
 var helloMessage = sayHello("Shaz");
-console.log(helloMessage);
+// console.log(helloMessage);
 
 /**
  * TODO:
@@ -32,7 +32,7 @@ console.log(helloMessage);
  */
 
 var myName = "Shaz";
-console.log(sayHello(myName));
+// console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -61,7 +61,7 @@ function isTwo(num){
     return num == 2;
 }
 
-console.log(isTwo(random));
+// console.log(isTwo(random));
 
 /**
  * TODO:
@@ -79,9 +79,9 @@ function calculateTip(percentage, total){
     return total * percentage;
 }
 
-console.log(calculateTip(0.20, 20));
-console.log(calculateTip(0.25, 25.50));
-console.log(calculateTip(0.15, 33.42));
+// console.log(calculateTip(0.20, 20));
+// console.log(calculateTip(0.25, 25.50));
+// console.log(calculateTip(0.15, 33.42));
 
 
 /**
@@ -91,12 +91,13 @@ console.log(calculateTip(0.15, 33.42));
  * then display the dollar amount they should tip
  */
 
-var total = prompt("What is the bill total?");
-var percentage = prompt("What percentage of the bill total would you like to leave as a tip?");
-var percentageDecimal = percentage * 0.01;
-var tip = calculateTip(percentageDecimal, total);
-var totalWithTip = (Number(total) + Number(tip));
-alert(percentage + " percent of " + total + " is " + tip + ". Your total including tip will be " + totalWithTip);
+// var total = Number(prompt("What is the bill total?"));
+// var percentage = Number(prompt("What percentage of the bill would you like to leave as a tip?"));
+// var percentageDecimal = percentage * 0.01;
+// var tip = calculateTip(percentageDecimal, total);
+// var totalWithTip = (Number(total) + Number(tip));
+
+// alert(percentage + " percent of " + total.toFixed(2) + " is " + tip + ". Your total including tip will be $" + totalWithTip.toFixed(2) + ".");
 
 /**
  * TODO:
@@ -119,3 +120,4 @@ function applyDiscount(price, discount){
 }
 
 console.log(applyDiscount(100, 0.20));
+console.log(applyDiscount(45.99, 0.12));
