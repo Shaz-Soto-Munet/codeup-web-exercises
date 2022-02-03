@@ -23,6 +23,7 @@
  */
 
 function analyzeColor(color){
+
     if (color === "blue") {
         return "Blue is the color of the sky.";
     } else if (color === "red"){
@@ -35,6 +36,7 @@ function analyzeColor(color){
         return "I don't know anything about " + color + ".";
     }
 }
+
 
 // console.log(analyzeColor("red"));
 // console.log(analyzeColor("blue"));
@@ -80,7 +82,7 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
 //         console.log("Violet is the color of lavender.");
 //         break;
 //     default:
-//         console.log("I dont know anything about " + randomColor + ".");
+//         console.log("I don't know anything about " + randomColor + ".");
 // }
 
 
@@ -129,7 +131,7 @@ function calculateTotal(luckyNum, totalAmount){
     } else if (luckyNum === 4){
         return totalAmount - (totalAmount * 0.50);
     } else if (luckyNum === 5){
-        return totalAmount * 0;
+        return 0;
     } else {
         return totalAmount;
     }
@@ -195,26 +197,26 @@ function plusOneHundredAlert(num){
 
 function negativeOrPositiveAlert(num){
     if (num > 0){
-        return alert("Your number is positive.")
+        return alert("Your number is positive.");
     } else if (num === 0){
-        return alert("Zero is not a positive nor a negative number.")
+        return alert("Zero is not a positive nor a negative number.");
     } else {
-        return "Your number is negative."
+        return alert("Your number is negative.");
     }
 }
 
 var numberYesOrNo = confirm("Would you like to enter a number?");
 if (numberYesOrNo === true){
     var userNumber = Number(prompt("What number would you like to enter?"));
-        if (typeof userNumber === "number"){
+        if (!isNaN(userNumber)){
             evenOrOddAlert(userNumber);
             plusOneHundredAlert(userNumber);
             negativeOrPositiveAlert(userNumber);
         } else {
-            alert("Incorrect input data type.");
+            alert("You didn't enter a number...");
         }
 } else {
     alert("Alright, then...");
 }
 
-console.log(typeof userNumber);
+// console.log(typeof userNumber);
