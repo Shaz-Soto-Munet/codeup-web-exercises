@@ -29,6 +29,9 @@
 //
 // alert("Your guess of " + guess + " matches the number " + randomNumber + "!");
 
+/*
+
+
 var allCones = Math.floor(Math.random()*50)+50;
 
 do {
@@ -55,4 +58,12 @@ do {
 } while (allCones > 0);
 
 console.log("All cones were sold! Let's go home.");
+
+*/
+
+//For loops
+
+// for (var count=100; count>=0; count--){
+// 	console.log(count);
+// }
 
