@@ -9,19 +9,19 @@
 // showMultiplicationTable(7);
 
 //exercise 3
-for (var i=1; i<=10; i++){
-	var randomNumber = Math.floor(Math.random()*181)+20;
-	(randomNumber % 2 === 0)
-		? console.log(randomNumber + " is even.")
-		: console.log(randomNumber + " is odd.");
-}
+// for (var i=1; i<=10; i++){
+// 	var randomNumber = Math.floor(Math.random()*181)+20;
+// 	(randomNumber % 2 === 0)
+// 		? console.log(randomNumber + " is even.")
+// 		: console.log(randomNumber + " is odd.");
+// }
 
-//exercise 4: unfinished
+//exercise 4:
 // for (var i="1"; i.length<10; i+="1"){
 // 	console.log(i*i.length);
 // }
 
 //exercise 5
-// for (var i=100; i>0; i=i-5){
-// 	console.log(i);
-// }
+for (var i=100; i>0; i-=5){
+	console.log(i);
+}
