@@ -19,22 +19,11 @@
 // }
 
 //exercise 4: unfinished
-for (var i=0; i<10; i++){
-	// var iteration;
-	// var string = i.toString() ;
-	// var amountOfCopies = string.slice();
-	// // console.log(string);
-	// console.log("Iteration before incrementing it is " + iteration;
-	// iteration = i + 1
-	// console.log("The amount of copies are " + amountOfCopies);
-	// console.log("Iteration var is " + iteration)
-}
-
 for (var i="1"; i.length<10; i+="1"){
-	console.log(i);
-	var number = i
-	for (var x=1; x<10; x=x+1){
-		console.log(x*i);
+	console.log("First loop output is " + i);
+	for (var x = 1; x < 10; x = x + i) {
+		console.log("Second loop output is " + x);
+		console.log(i * i.length);
 	}
 }
 
