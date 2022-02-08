@@ -11,7 +11,7 @@
 //exercise 3
 for (var i=1; i<=10; i++){
 	var randomNumber = Math.floor(Math.random()*181)+20;
-	(i % 2 === 0)
+	(randomNumber % 2 === 0)
 		? console.log(randomNumber + " is even.")
 		: console.log(randomNumber + " is odd.");
 }
