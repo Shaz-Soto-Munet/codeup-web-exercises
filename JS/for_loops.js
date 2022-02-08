@@ -19,12 +19,10 @@
 // }
 
 //exercise 4: unfinished
+
+
 for (var i="1"; i.length<10; i+="1"){
-	console.log("First loop output is " + i);
-	for (var x = 1; x < 10; x = x + i) {
-		console.log("Second loop output is " + x);
-		console.log(i * i.length);
-	}
+	console.log(i*i.length);
 }
 
 //exercise 5
