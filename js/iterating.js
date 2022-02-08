@@ -76,12 +76,12 @@
 	function secondItem(arrayName){
 		return arrayName[1];
 	}
-	function thirdItem(arrayName){
-		return arrayName[2];
+	function lastItem(arrayName){
+		return arrayName[arrayName.length-1];
 	}
 
 	console.log("The first item in the array is " + firstItem(names) + ".");
 	console.log("The second item in the array is " + secondItem(names) + ".");
-	console.log("The third item in the array is " +thirdItem(names) + ".");
+	console.log("The last item in the array is " +lastItem(names) + ".");
 
 })();
