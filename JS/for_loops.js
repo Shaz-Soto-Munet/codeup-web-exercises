@@ -9,13 +9,12 @@
 // showMultiplicationTable(7);
 
 //exercise 3
-// for (var i=1; i<=10; i++){
-// 	var randomNumber = Math.floor(Math.random()*200)+20;
-// 	// console.log(i + ". " + randomNumber);
-// 	(i % 2 === 0)
-// 		? console.log(randomNumber + " is even.")
-// 		: console.log(randomNumber + " is odd.");
-// }
+for (var i=1; i<=10; i++){
+	var randomNumber = Math.floor(Math.random()*181)+20;
+	(i % 2 === 0)
+		? console.log(randomNumber + " is even.")
+		: console.log(randomNumber + " is odd.");
+}
 
 //exercise 4: unfinished
 // for (var i="1"; i.length<10; i+="1"){
