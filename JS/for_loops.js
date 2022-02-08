@@ -31,11 +31,11 @@ for (var i=0; i<10; i++){
 }
 
 for (var i="1"; i.length<10; i+="1"){
-	// console.log(i);
-	for (var x=1; x<10; x=x+i){
+	console.log(i);
+	var number = i
+	for (var x=1; x<10; x=x+1){
 		console.log(x*i);
 	}
-
 }
 
 //exercise 5

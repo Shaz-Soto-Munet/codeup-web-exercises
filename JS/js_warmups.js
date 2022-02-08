@@ -31,12 +31,32 @@ let counter;
 // 	counter--;
 // }
 
-var number = 5;
-while (number < 200){
-	console.log(number);
-	number = number * 2;
+// var number = 5;
+// while (number < 200){
+// 	console.log(number);
+// 	number = number * 2;
+// }
+
+//Feb 8
+function squared(num){
+	return num ** 2;
+}
+function plusItself(num){
+	return num + num;
+}
+function doubleAndAdd(num1, num2){
+	return (num1 * 2) + (num2 * 2);
 }
 
+function stringLength(string){
+	return string.length;
+}
+function stringLengthSum(string1, string2){
+	return string1.length + string2.length;
+}
+function stringLengthEvenOrOdd(string){
+	return (string.length % 2 === 0) ?"even" :"odd";
+}
 
 
 
