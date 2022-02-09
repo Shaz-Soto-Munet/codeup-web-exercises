@@ -58,6 +58,21 @@ console.log(arrayRepeatLastTwo);
 array.reverse();
 console.log("This is how array looks like reversed " + array);
 
+console.log("-------------------");
+
+var hamletQuote = "To be or not to be, that is the question";
+console.log(hamletQuote);
+var noCommasHamletQuote = hamletQuote.replace(",", "");
+console.log("Hamlet quote without the comma: " + noCommasHamletQuote);
+var hamletQuoteArray = noCommasHamletQuote.split(" ");
+console.log(hamletQuoteArray);
+var hamletQuoteWordListBackwards = hamletQuoteArray.reverse();
+console.log(hamletQuoteWordListBackwards);
+var hamletQuoteBackwards = hamletQuoteWordListBackwards.join(" ");
+console.log(hamletQuoteBackwards);
+console.log(typeof hamletQuoteBackwards);
+
+
 
 
 
