@@ -45,7 +45,18 @@ prices.forEach(function(price, index){
 	console.log("Item number " + (index+1) + ": " + price);
 });
 
+console.log("-----------------");
 
+var array = ["zero", "one", "two", "three"];
+var lastTwoOfArray = array.slice(2);
+console.log(array);
+console.log(lastTwoOfArray)
+var firstTwoOfArray = array.slice(0,2);
+console.log(firstTwoOfArray);
+var arrayRepeatLastTwo = array.concat(lastTwoOfArray);
+console.log(arrayRepeatLastTwo);
+array.reverse();
+console.log("This is how array looks like reversed " + array);
 
 
 
