@@ -134,7 +134,9 @@
 		console.log("Book #" + (index+1));
 		console.log(book.title);
 		console.log(book.author.firstName + " " + book.author.lastName);
-		console.log("-------")
+		(index === books.length-1)
+			?console.log("------------------------")
+			:console.log("-------");
 	});
 
 	/**
@@ -148,6 +150,16 @@
 	 *   `showBookInfo` function.
 	 */
 
+	function createBook(newTitle, authorFirstName, authorLastName){
+		books.push({title: newTitle, author: {firstName: authorFirstName, lastName: authorLastName}});
+	};
 
+	function showBooksInfo(book){
+		console.log("Title: " + book.title);
+		console.log("Auhor: " + book.author.firstName + " " + book.author.lastName);
+	}
+
+	createBook("The Alchemist", "Paulo", "Coelho");
+	showBooksInfo(books[books.length-1]);
 
 })();
