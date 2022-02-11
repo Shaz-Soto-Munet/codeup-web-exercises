@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Objects Mini Exercises</title>
+</head>
+<body>
+    <h1>Objects Mini Exercises</h1>
+    <script>
+
+		// 	-- Mini Exercise 1
+		// Create a few beverage objects and assign values to each object for the following properties:
+		// 	- brandName
+		// 	- type
+		// 	- volumeInLiters
+		// 	- priceInCents
+		// 	- expirationDate
+		// 	- datesOfPreviousSips (use an array of strings)
+		// - isOpen
+		// Define your objects using both literal syntax to create all properties and values at once and also try defining empty objects and assign property values in separate statements using the dot notation.
+
+        var beverages = [
+			{
+				brandName: "Coca-Cola",
+                type: "Diet Coke",
+                volumeInLiters: 0.25, //one can
+                priceInCents: 1.19,
+                expirationDate: "11FEB2023",
+                datesOfPreviousSips: ["10FEB2022", "09FEB2022", "08FEB2022"],
+                isOpen: true,
+            },
+			{
+				brandName: "HEB",
+				type: "Coconut Sparkling Water",
+				volumeInLiters: 0.25, //one can
+				priceInCents: 0.19,
+				expirationDate: false,
+				datesOfPreviousSips: ["11FEB2022"],
+				isOpen: true,
+			},
+			{
+				brandName: false,
+				type: "Water",
+				volumeInLiters: Infinity, //filtered tap water
+				priceInCents: 0.00,
+				expirationDate: false,
+				datesOfPreviousSips: ["11FEB2022", "10FEB2022", "09FEB2022", "08FEB2022", "07FEB2022", "06FEB2022", "05FEB2022", "04FEB2022", "03FEB2022", "02FEB2022"],
+				isOpen: false,
+			},
+        ]
+    </script>
+</body>
+</html>
