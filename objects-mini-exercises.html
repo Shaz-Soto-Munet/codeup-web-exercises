@@ -53,6 +53,48 @@
         beverages.forEach(function(drink){
 			console.log(drink.type);
         });
+
+	// 	---------------------- Mini Exercise 2 -----------------------
+
+		var users = [
+			{
+				givenName: 'Sam',
+				age: 21
+			},
+			{
+				givenName: 'Cathy',
+				age: 34
+			},
+			{
+				givenName: 'Karen',
+				age: 43
+			}
+		];
+
+    // 	1. Log the names of all users in a single console log separated by spaces.
+    // output = “Sam Cathy Karen”
+
+		console.log("The name of the users are: " + users[0].givenName, users[1].givenName, users[2].givenName);
+
+
+    // 	2. Change the names of all users to “John Doe”
+
+        users.forEach(function(user, index){
+			users[index].givenName = "John Doe";
+        })
+
+		console.log("Now the names of all the users should be John Doe: " + users[0].givenName, users[1].givenName, users[2].givenName);
+
+
+    // 3. Increase the current age of all users by 1
+    // Can you accomplish each step using iteration?
+
+        for (var i=0; i<users.length; i++){
+			users[i].age++;
+        }
+
+		console.log(users[0].age, users[1].age, users[2].age);
+
     </script>
 </body>
 </html>
