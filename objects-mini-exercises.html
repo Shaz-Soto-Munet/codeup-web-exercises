@@ -95,6 +95,28 @@
 
 		console.log(users[0].age, users[1].age, users[2].age);
 
+    // 4. Get the total of all the ages
+
+        var agesTotal = 0;
+		users.forEach(function(user, index){
+			agesTotal += users[index].age;
+        })
+		console.log(agesTotal);
+
+    // 5. Find the average of all ages of users
+
+        var averageAge = agesTotal / users.length;
+		console.log(averageAge);
+
+    // 6. Log all the user information in the following format:
+        /*
+            user: Sam | age: 21
+            user: Cathy | age: 34
+            user: Karem | age: 43
+         */
+
+    // 7. Log the name of the longest
+
     </script>
 </body>
 </html>
