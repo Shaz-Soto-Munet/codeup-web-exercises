@@ -58,6 +58,24 @@ function stringLengthEvenOrOdd(string){
 	return (string.length % 2 === 0) ?"even" :"odd";
 }
 
+// Write a function, createUserMsg, that takes in a user object like the following...
+var user = {
+	username: 'jbomb',
+	email: 'john@email.com',
+	isAdmin: true
+}
+// ...and returns a string output that displays in the console like this...
+// ‘User jbomb is an admin and can be reached at john@email.com’
+// If jbomb were not an admin, the message should display...
+// ‘User jbomb is not an admin and can be reached at john@email.com’
+
+function createUserMsg(user){
+	(user.isAdmin)
+		? console.log("User " + user.username + " is an admin and can be reached at " + user.email + ".")
+		: console.log("User " + user.username + " is not an admin and can be reached at " + user.email + ".");
+}
+
+createUserMsg(user);
 
 
 

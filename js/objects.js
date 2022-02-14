@@ -16,7 +16,7 @@
 		{
 			firstName: "Shaz",
 			lastName: "Soto-Munet",
-		}
+		};
 
 
 	/**
@@ -34,7 +34,7 @@
 	}
 	person.sayHello();
 
-	console.log("-----------------")
+	console.log("-----------------");
 
 	/** TODO:
 	 * HEB has an offer for the shoppers that buy products amounting to
