@@ -57,7 +57,7 @@
 	];
 
 	shoppers.forEach(function(person){
-		var discountedTotal = person.amount - (person.amount*0.12);
+		var discountedTotal = person.amount - (person.amount * 0.12);
 		if (person.amount > 200){
 			console.log(person.name + "'s total is $" + discountedTotal.toFixed(2) + ". Their total before discount was $" + person.amount.toFixed(2) + ".");
 		} else {
@@ -102,7 +102,6 @@
 	];
 
 
-
 	/**
 	 * TODO:
 	 * Loop through the books array and output the following information about
@@ -130,14 +129,31 @@
 
 	console.log("-----------------")
 
+	// books.forEach(function(book, index){
+	// 	console.log("Book #" + (index+1));
+	// 	console.log(book.title);
+	// 	console.log(book.author.firstName + " " + book.author.lastName);
+	// 	(index === books.length-1)
+	// 		?console.log("------------------------")
+	// 		:console.log("-------");
+	// });
+
+	// for (var i = 0; i < books.length; i++) {
+	// 	var bookMsg = 'Book # ' + (i + 1) + '\n' +
+	// 		'Title: ' + books[i].title + '\n' +
+	// 		'Author: ' + books[i].author.firstName + ' ' + books[i].author.lastName + '\n' +
+	// 		'---';
+	// 	console.log(bookMsg);
+	// }
+
 	books.forEach(function(book, index){
-		console.log("Book #" + (index+1));
-		console.log(book.title);
-		console.log(book.author.firstName + " " + book.author.lastName);
-		(index === books.length-1)
-			?console.log("------------------------")
-			:console.log("-------");
-	});
+		var bookMsg = 'Book # ' + (index + 1) + '\n' +
+			'Title: ' + books[index].title + '\n' +
+			'Author: ' + books[index].author.firstName + ' ' + books[index].author.lastName + '\n' +
+			'---';
+		console.log(bookMsg);
+
+	})
 
 	/**
 	 * Bonus:
