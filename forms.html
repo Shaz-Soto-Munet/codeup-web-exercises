@@ -12,23 +12,29 @@
         <form method="POST" action="https://request-inspector.glitch.me/">
             <fieldset>
                 <legend><h3>Personal Info</h3></legend>
-                <label>Username:
-                    <input type="text" id="username" name="username">
-                </label>
-                <label>Password:
-                    <input type="text" id="password" name="password">
-                </label>
+                <label for="email">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="email">
+                <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" placeholder="password">
                 <br>
                 <br>
-                <label>Bio:
-                    <textarea name="bio"></textarea>
-                </label>
+                <label for="bio">Bio:</label>
+                    <textarea id="bio" name="bio" rows="10" cols="45" placeholder="Please write a short description of yourself."></textarea>
+                <br>
+                <br>
             </fieldset>
             <fieldset>
                 <legend><h3>How did you hear about us?</h3></legend>
-                <label><input type="radio" name="Billboard">Billboard</label><br>
-                <label><input type="radio" name="Radio Advertisement">Radio</label><br>
-                <label><input type="radio" name="Internet Advertisement">Internet</label><br>
+                    <label for="billboard">Billboard</label>
+                        <input id="billboard" type="radio" name="howDidYouHearAboutUs"><br>
+                    <label for="radio ad">Radio Ad</label>
+                        <input id="radio ad" type="radio" name="howDidYouHearAboutUs"><br>
+                    <label for="internet ad">Internet Ad</label>
+                        <input id="internet ad" type="radio" name="howDidYouHearAboutUs"><br>
+                    <label for="other">Other</label>
+                        <input id="other" type="radio" name="howDidYouHearAboutUs"><br>
+                    <br>
+                <input type="reset">
             </fieldset>
             <br>
             <fieldset>
@@ -41,6 +47,8 @@
                         <option value="firefox">Mozilla Firefox</option>
                         <option value="internet explorer">Internet Explorer</option>
                     </select>
+                    <br>
+                    <br>
             </fieldset>
             <br>
             <input type="submit">
