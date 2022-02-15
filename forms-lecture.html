@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lecture</title>
+</head>
+<body>
+    <form method="post" action="https://request-inspector.glitch.me">
+        <fieldset>
+            <legend><h4>Personal Info</h4></legend>
+                <label for="username">Username:</label>
+                <input type="text" name="username" id="username">
+                <br>
+                <br>
+                <label for="address">Address:</label>
+                <input type="text" name="address" id="address">
+                <br>
+                <br>
+                <label for="city">City:</label>
+                <input type="text" name="city" id="city">
+                <br>
+                <br>
+            <input type="reset">
+        </fieldset>
+        <fieldset>
+            <legend><h4>Marvel or DC?</h4></legend>
+            <label>Marvel:</label><input type="radio" name="marveldc" value="Marvel"><br>
+            <label>DC:</label><input type="radio" name="marveldc" value="DC"><br>
+            <br>
+            <input type="submit">
+            <br>
+            <br>
+        </fieldset>
+        <h4>Choose your extras:</h4>
+            <label><input type="checkbox" name="extras" value="Provolone">Provolone</label><br>
+            <label><input type="checkbox" name="extras" value="Cheddar">Cheddar</label><br>
+            <label><input type="checkbox" name="extras" value="American Cheese">American Cheese</label><br>
+            <label><input type="checkbox" name="extras" value="Swiss">Swiss Cheese</label><br>
+            <label><input type="checkbox" name="extras" value="Pepper Jack">Pepper Jack</label><br>
+            <label><input type="checkbox" name="extras" value="Jalapenos">Sliced Jalapenos</label><br>
+            <label><input type="checkbox" name="extras" value="Mushrooms">Sauteed Mushrooms</label><br>
+            <label><input type="checkbox" name="extras" value="Onions">Grilled Onions</label><br>
+            <label><input type="checkbox" name="extras" value="Bacon">Extra Bacon</label><br>
+            <label><input type="checkbox" name="extras" value="Guacamole">Guacamole</label><br>
+        <br>
+        <h4>Choose your destination:</h4>
+        <label>
+            <select name="destination">
+                <option disabled selected hidden value="">--select an option--</option>
+                <option value="Hawaii">Hawaii</option>
+                <option value="Yucatan">Yucatan</option>
+                <option value="Greece">Greece</option>
+                <option value="Florida">Florida</option>
+                <option value="California">California</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+        </label>
+        <br>
+        <br>
+        <input type="reset">
+    </form>
+    <form method="post" action="https://request-inspector.glitch.me">
+        <h4>Please Leave Your Comments:</h4>
+        <textarea name="comments" id="comments" cols="48" rows="10"></textarea><br>
+        <input type="submit">
+        <input  type="reset">
+    </form>
+    <form method="post" action="https://request-inspector.glitch.me">
+        <h4>Assorted inputs</h4>
+        <input type="date" name="date"><br>
+        <!-- date can take min and max attributes -->
+        <input type="color" name="pickColor"><br>
+        <input type="range" name="evaluation"><br>
+        <!-- range can take min, max, and step attributes -->
+        <input type="number" name="number"><br>
+        <!-- number can take min, max, and step attributes -->
+        <!-- email, tel, and url inputs are predominantly mobile-oriented -->
+        <input type="submit">
+    </form>
+</body>
+</html>
