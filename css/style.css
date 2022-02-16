@@ -1,4 +1,8 @@
-/*element selector*/
+h1, h2, h3, h4, h5, h6 {
+    text-align: center;
+}
+
+/*element selector: applies to all elements using the <li> tag*/
 li {
     color: red;
     font-style: italic;
@@ -15,3 +19,28 @@ li {
     color: blue;
 }
 
+/*element selector*/
+body {
+    background-color: #dabbbb;
+    font-family: sans-serif;
+}
+
+/*class selector: unique to multiple elements*/
+.sectionOne {
+    font-size: 15px;
+}
+
+/*id selector: unique to a single element*/
+#ourProducts {
+    font-style: italic;
+    font-size: 25px;
+    font-family: Serif;
+    font-weight: 800;
+}
+
+/*element selector applied to table data only*/
+td {
+    font-weight: 50;
+    font-size: 20px;
+    text-align: center;
+}
