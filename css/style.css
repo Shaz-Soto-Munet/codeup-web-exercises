@@ -2,6 +2,7 @@
 
 h1, h2, h3, h4, h5, h6 {
     text-align: center;
+    text-decoration: underline;
 }
 
 /*element selector: applies to all elements using the <li> tag*/
@@ -38,13 +39,7 @@ body {
     font-size: 25px;
     font-family: serif;
     font-weight: 800;
-}
-
-/*element selector applied to table data only*/
-td {
-    font-weight: 50;
-    font-size: 20px;
-    text-align: center;
+    text-align-all: center;
 }
 
 /*pseudo selectors*/
@@ -66,3 +61,23 @@ a:focus {
     color: blueviolet;
 }
 
+/*background image and font for entire page*/
+body {
+    background-image: url("https://i.stack.imgur.com/NEuip.jpg");
+    font-family: Georgia;
+    color: aliceblue;
+    text-align: center;
+}
+
+/*list style*/
+
+ul, ol {
+    list-style: lower-roman;
+    text-align: center;
+}
+
+/*table elements*/
+td, tr {
+    padding: 20px;
+    text-align-all: center;
+}
