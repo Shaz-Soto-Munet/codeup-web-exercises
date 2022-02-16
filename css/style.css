@@ -1,4 +1,17 @@
+/*element selector*/
+li {
+    color: red;
+    font-style: italic;
+}
+
+/*class selector*/
 .fancy-header {
     color: purple; /* single line comment */
     text-decoration: underline;
 }
+
+/*id selector*/
+#competence {
+    color: blue;
+}
+
