@@ -81,7 +81,15 @@ function createUserMsg(user){
 
 //---------------------------------------------------------------------
 
+var areaOrPerimeter = function(length, width){
+	if (isNaN(parseFloat(length) || isNaN(parseFloat(width)))) {
+		return false;
+	} if (parseFloat(length) == parseFloat(width)) {
+		return parseFloat(length) * 4;
+	} return (parseFloat(length) + parseFloat(width)) * 2;
+}
 
+//----------------------------------------------------------------------
 
 
 
