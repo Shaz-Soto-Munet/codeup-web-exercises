@@ -80,6 +80,7 @@ function createUserMsg(user){
 // createUserMsg(user);
 
 //---------------------------------------------------------------------
+//Feb 14
 
 var areaOrPerimeter = function(length, width){
 	if (isNaN(parseFloat(length) || isNaN(parseFloat(width)))) {
@@ -91,6 +92,12 @@ var areaOrPerimeter = function(length, width){
 
 //----------------------------------------------------------------------
 
-
-
+//Feb 15
+function sumStr(string1, string2){
+	var stringsSum = Number(string1) + Number(string2);
+	if ((typeof string1 !== "number" && typeof Number(string1) === "number") && (typeof string2 !== "number" && typeof Number(string2) === "number")){
+		return stringsSum.toString();
+	} return false;
+}
+//----------------------------------------------------------------------
 
