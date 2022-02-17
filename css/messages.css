@@ -1,0 +1,30 @@
+body, html {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Ubuntu, sans-serif;
+}
+
+div {
+    width: 100%;
+    border: 1px lightgray;
+    border-radius: 10%;
+}
+
+message message-info {
+    color: #66389c;
+    background-color: #91a7ac;
+}
+
+message message-success{
+
+}
+
+message message-warning{
+
+}
+
+message message-error {
+
+}
