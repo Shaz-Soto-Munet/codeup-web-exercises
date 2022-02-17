@@ -1,0 +1,42 @@
+body {
+    background-image: url("/images/forest.jpeg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: black;
+    font-family: Raleway;
+    color: white;
+}
+
+.logo{
+    margin: 20px;
+}
+
+.centerText {
+    align-items: center;
+    text-align: center;
+    margin: auto;
+}
+
+.comingSoon {
+
+}
+
+.daysLeft {
+
+}
+
+.poweredBy {
+    font-family: Georgia, serif;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+}
+
+hr {
+    width: 20%;
+}
+
+.w3 {
+    text-decoration: underline;
+}
