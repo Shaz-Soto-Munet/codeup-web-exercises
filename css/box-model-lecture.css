@@ -1,0 +1,30 @@
+* {
+    margin: 5px;
+    text-align: center;
+    color: aliceblue;
+    /*border: 1px solid black;*/
+}
+
+body {
+    background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+
+main {
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 10px 10px 10px #2c1212, 5px 5px 5px red;
+}
+
+h1 {
+    text-decoration: underline;
+    font-size: 50px;
+}
+
+p {
+    padding: 10px;
+    margin: 10px;
+}
+
