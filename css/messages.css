@@ -2,29 +2,33 @@ body, html {
     height: 100%;
     width: 100%;
     padding: 0;
-    margin: 0;
     font-family: Arial, Ubuntu, sans-serif;
 }
 
 div {
     width: 100%;
-    border: 1px lightgray;
-    border-radius: 10%;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
 }
 
-message message-info {
-    color: #66389c;
-    background-color: #91a7ac;
+.message-info {
+    color: #2e2388;
+    background-color: #c6d7f6;
 }
 
-message message-success{
-
+.message-success{
+    color: #3a8558;
+    background-color: #c7ead3;
 }
 
-message message-warning{
-
+.message-warning{
+    color: #a57900;
+    background-color: #f2f1c2;
 }
 
-message message-error {
-
+.message-error {
+    color: #c90031;
+    background-color: #f1cbcf;
 }
