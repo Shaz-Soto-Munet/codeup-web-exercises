@@ -108,3 +108,33 @@ function getSimpleUser(user){
 }
 
 //----------------------------------------------------------------------------
+//Feb 18
+// Create a function, analyzeArray, that takes in an array and returns an object with information about the passed array. The function should return an object with properties containing information about the array, including the lengthOfArray, containsAllStrings, and the combineResult of adding all elements together.
+
+
+
+function analyzeArray(array){
+	var containsAllStrings = true;
+	var concatenatedStrings = "";
+	for (var i=0; i<array.length; i++){
+		if (typeof array[i] !== "string"){
+			containsAllStrings = false;
+		}
+	}
+	array.forEach(function (element){
+		if (typeof element === "string") {
+			concatenatedStrings = concatenatedStrings + element;
+		}
+	})
+	var arrayInfo = {}
+		arrayInfo.lenghtOfArray = array.length;
+		arrayInfo.containsAllStrings = containsAllStrings;
+		arrayInfo.combinedResult = concatenatedStrings;
+	return arrayInfo;
+}
+
+
+var someArray = ["bob", "100", "null", false]
+console.log(analyzeArray(someArray))
+
+//----------------------------------------------------------------------------
