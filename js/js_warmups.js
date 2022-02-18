@@ -101,3 +101,10 @@ function sumStr(string1, string2){
 }
 //----------------------------------------------------------------------
 
+function getSimpleUser(user){
+	var firstName =  user.firstName.toLowerCase();
+	var lastName = user.lastName.toLowerCase();
+	return {firstName, lastName}
+}
+
+//----------------------------------------------------------------------------

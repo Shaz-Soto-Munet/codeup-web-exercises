@@ -3,8 +3,9 @@ body {
     background-repeat: no-repeat;
     background-size: 100%;
     background-color: black;
-    font-family: Raleway;
+    font-family: Raleway, sans-serif;
     color: white;
+    margin: auto;
 }
 
 .logo{
@@ -12,17 +13,20 @@ body {
 }
 
 .centerText {
-    align-items: center;
     text-align: center;
-    margin: auto;
+    position: absolute;
+    top: 200px;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
 }
 
 .comingSoon {
-
+    font-size: 80px;
 }
 
 .daysLeft {
-
+    margin: 10px;
 }
 
 .poweredBy {
