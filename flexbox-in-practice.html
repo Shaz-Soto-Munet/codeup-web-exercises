@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flexbox In Practice</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            background: orange;
+        }
+        h1, h2, h3 {
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        h3 {
+            color: grey;
+        }
+        hr {
+            border-top: 1px solid #e1dfdf;
+            width: 90px;
+        }
+        .card {
+            margin: .5em;
+            border-radius: 2px;
+            background: white;
+            width: 250px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-around;
+        }
+
+        img {
+            border-radius: 50%;
+            width: 120px;
+        }
+        i {
+            color: grey;
+        }
+
+        .text-section {
+            position: relative;
+            bottom: 1.5em;
+        }
+        .icons i {
+            font-size: 2.2em;
+        }
+
+        section:nth-of-type(3) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <article class="card">
+        <section>
+            <img src="images/man1.png" alt="profile-image" >
+        </section>
+        <section class="text-section">
+            <h2>Ron Swanson</h2>
+            <h3>Director</h3>
+            <hr>
+        </section>
+        <section class="icons">
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+        </section>
+    </article>
+</body>
+</html>
