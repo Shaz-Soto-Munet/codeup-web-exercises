@@ -85,7 +85,7 @@ function createUserMsg(user){
 var areaOrPerimeter = function(length, width){
 	if (isNaN(parseFloat(length) || isNaN(parseFloat(width)))) {
 		return false;
-	} if (parseFloat(length) == parseFloat(width)) {
+	} if (parseFloat(length) === parseFloat(width)) {
 		return parseFloat(length) * 4;
 	} return (parseFloat(length) + parseFloat(width)) * 2;
 }
@@ -135,6 +135,27 @@ function analyzeArray(array){
 
 
 var someArray = ["bob", "100", "null", false]
-console.log(analyzeArray(someArray))
+// console.log(analyzeArray(someArray))
 
 //----------------------------------------------------------------------------
+
+var array1 = ["John", "Josh", "Justin", "Jacob"];
+var array2 = ["Smith", "Joshington", "Morales", "Abernathy"];
+
+function createNames (firstNameArray, lastNameArray){
+	var arrayOfFirstAndLastNames = [];
+	for (var i=0; i<firstNameArray.length; i++){
+		arrayOfFirstAndLastNames.push({
+			firstName: firstNameArray[i],
+			lastName: lastNameArray[i]
+		});
+	}
+	return arrayOfFirstAndLastNames;
+}
+
+console.log(createNames(array1, array2));
+
+//----------------------------------------------------------------------------
+
+
+
