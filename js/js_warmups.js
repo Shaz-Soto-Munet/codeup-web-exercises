@@ -153,9 +153,36 @@ function createNames (firstNameArray, lastNameArray){
 	return arrayOfFirstAndLastNames;
 }
 
-console.log(createNames(array1, array2));
+// console.log(createNames(array1, array2));
 
 //----------------------------------------------------------------------------
 
+//Feb24
+//write a function that accepts two integers and returns the remainder of dividing the larger value by the smaller value.
 
+//division by zero should return NaN
+//examples:
+
+function remainderOfTwoIntegers(num1, num2){
+	if (num1>num2) {
+		return num1 % num2;
+	}
+	return num2 % num1;
+}
+
+//---------------------------------------------------------------------------
+// m=13
+function printerError(string){
+	var lengthOfString = string.length;
+	var totalOverM = 0;
+	for (var i=0; i<string.length; i++){
+		if (string[i] > "m"){
+			totalOverM++;
+		}
+	}
+	return  "" + totalOverM + "/" + lengthOfString;
+}
+const detectPrinterErrors = input => `${(input.match(/[n-z]/g) !== null) ? input.match(/[n-z]/g).length : 0}/${input.length}`;
+
+//------------------------------------------------------------------------------
 
