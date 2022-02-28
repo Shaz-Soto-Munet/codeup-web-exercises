@@ -17,7 +17,7 @@
             font-weight: bolder;
             margin-top: 25px;
         }
-        ul#info {
+        div#info {
             margin-top: 30px;
             padding-left: 0;
             border-bottom: 5px solid #8fa573;
@@ -38,12 +38,21 @@
 <div class="container text-center">
     <h2 class="">Software Developer</h2>
     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid consectetur eaque reiciendis sed voluptates! Accusantium et maxime minus molestiae numquam perspiciatis possimus ut! Deleniti eaque itaque non nostrum odio optio?</p>
-    <ul id="info" class="container-fluid col-lg-12">
-        <li><span id="phone col-lg-3">&#128222;&#32;</span>210-123-1234</li>
-        <li class="py-1 col-lg-3">&#9993;&#32;cody@codeup.com</li>
-        <li><span class="fw-bolder fs-5 col-lg-3">in </span>@cody-the-duck</li>
-        <li class="pt-1 py-4 col-lg-3"><img src="images/GitHub-Mark-20px.png"> @cody-the-duck</li>
-    </ul>
+<!--    <ul id="info" class="container-fluid col-lg-12">-->
+<!--        <li><span id="phone col-lg-3">&#128222;&#32;</span>210-123-1234</li>-->
+<!--        <li class="py-1 col-lg-3">&#9993;&#32;cody@codeup.com</li>-->
+<!--        <li><span class="fw-bolder fs-5 col-lg-3">in </span>@cody-the-duck</li>-->
+<!--        <li class="pt-1 py-4 col-lg-3"><img src="images/GitHub-Mark-20px.png"> @cody-the-duck</li>-->
+<!--    </ul>-->
+
+<!--    refactoring list above to a div-->
+
+    <div id="info" class="container-fluid row pb-4">
+        <div class="col-lg-3">&#128222;&#32; 210-123-1234</div>
+        <div class="col-lg-3">&#9993;&#32;cody@codeup.com</div>
+        <div class="col-lg-3"><span class="fw-bolder fs-5 col-lg-3">in </span>@cody-the-duck</div>
+        <div class="col-lg-3"><img src="images/GitHub-Mark-20px.png"> @cody-the-duck</div>
+    </div>
 </div>
 <div class="container-fluid row">
     <div class="col-lg-5">
