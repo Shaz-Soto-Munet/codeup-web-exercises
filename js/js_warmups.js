@@ -185,4 +185,19 @@ function printerError(string){
 const detectPrinterErrors = input => `${(input.match(/[n-z]/g) !== null) ? input.match(/[n-z]/g).length : 0}/${input.length}`;
 
 //------------------------------------------------------------------------------
-
+// Mar 1
+function isLockNessMonster(string) {
+	if (typeof string === "string") {
+		var stringIntoArray = string.split(" ");
+		for (var i = 0; i < stringIntoArray.length; i++) {
+			if (stringIntoArray[i] === "tree" && stringIntoArray[i + 1] === "fiddy") {
+				return true;
+			} else if (stringIntoArray[i] === "3.5") {
+				return true;
+			} else if (stringIntoArray[i] === "three" && stringIntoArray[i + 1] === "fifty") {
+				return true;
+			}
+		}
+		return false;
+	} return false;
+}
