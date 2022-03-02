@@ -62,13 +62,45 @@ var hulkIntelligence = theHulk.dataset.intelligence;
 theHulk.innerText += " His intelligence is " + hulkIntelligence + "."
 
 // get reference to transfomr button
-var transformHulk = document.getElementById("transformHulk");
-transformHulk.onclick = function(){
-	var hulk = document.getElementById("hulk");
-	if (hulkState === "hulk"){
-		hulk.dataset.state = "Bruce Banner";
-	} else {
-		hulk.dataset.state = "hulk";
-	}
-	hulk.innerText = "The Hulk is in " + hulk.dataset.state + " state";
+// var transformHulk = document.getElementById("transformHulk");
+// transformHulk.onclick = function(){
+// 	var hulk = document.getElementById("hulk");
+// 	if (hulkState === "hulk"){
+// 		hulk.dataset.state = "Bruce Banner";
+// 	} else {
+// 		hulk.dataset.state = "hulk";
+// 	}
+// 	hulk.innerText = "The Hulk is in " + hulk.dataset.state + " state";
+// }
+
+
+// ------------------------Events Lecture Code----------------------------
+
+// var button = document.querySelector("button");
+// var secondButton = document.getElementsByTagName("button")[1];
+//
+function doThisWhenTheButtonIsClicked(){
+	alert("You clicked me!");
 }
+//
+// button.addEventListener('click', doThisWhenTheButtonIsClicked);
+//
+// secondButton.onclick = doThisWhenTheButtonIsClicked;
+
+var allTheButtons = document.getElementsByTagName("button");
+for (var i=0; i<allTheButtons.length; i++){
+	allTheButtons[i].addEventListener("click", doThisWhenTheButtonIsClicked)
+}
+
+//----------Mini-exercise-------------
+
+var squares = document.querySelectorAll(".square")
+var text = document.getElementById("paragraph")
+for (var i=0; i<squares.length; i++) {
+	// squares[i].addEventListener("click", squareAlert);
+	squares[i].onclick = squareAlert;
+}
+function squareAlert(){
+	text.innerText = "Ya clicked the maroon square!";
+}
+
