@@ -3,6 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>DOM</title>
+    <style>
+        /*.hotPink {*/
+        /*    color: hotpink;*/
+        /*}*/
+
+        #colorSubmission{
+            margin-top: 15px;
+        }
+
+        hr {
+            margin: 30px;
+        }
+    </style>
 </head>
 <body>
 
@@ -10,6 +23,19 @@
 <p id="dontLike">I don't like</p>
 <p id="marvel">Marvel</p>
 <p id="dc">DC</p>
+
+<hr>
+
+<form name="changeColor">
+    <label id="label" for="colorPreference">Enter Your Color Preference</label>
+    <input type="text" name="colorPreference" id="colorPreference"><br>
+    <input type="button" id="colorSubmission" value="Submit">
+</form>
+
+<hr>
+
+<p id="hulk" data-state="hulk" data-strength="super" data-intelligence="low">The Hulk</p>
+<button id="transformHulk">Transform Hulk</button>
 
 <script src="js/DOM_lecture.js"></script>
 </body>
