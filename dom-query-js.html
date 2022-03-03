@@ -9,41 +9,48 @@
     hr {
         margin: 30px;
     }
+
     button {
         margin: 10px;
     }
+
+    .box {
+        padding: 20px;
+        position: fixed;
+    }
+
+    .buttons {
+        position: relative;
+        top:150px;
+    }
+
+
+
 </style>
 <body>
 
 <h1 id="main-header">Hello World!</h1>
 
 <ul>
-    <li data-dbid="1" class="firstItem">Item 1</li>
-    <li data-dbid="2">Item 2</li>
-    <li data-dbid="3">Item 3</li>
-    <li data-dbid="4">Item 4</li>
-    <li data-dbid="5">Item 5</li>
+    <li style="color: black" data-dbid="1" class="firstItem">Item 1</li>
+    <li style="color: black" data-dbid="2">Item 2</li>
+    <li style="color: black" data-dbid="3">Item 3</li>
+    <li style="color: black" data-dbid="4">Item 4</li>
+    <li style="color: black" data-dbid="5">Item 5</li>
 </ul>
 
 <h2 id="sub-header">Hello Again.</h2>
 
-<p class="sub-paragraph">
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
-    eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-    ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-    aliquip ex ea commodo consequat. Duis aute irure dolor in
-    reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-    pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-    culpa qui officia deserunt mollit anim id est laborum.
+<p class="sub-paragraph box">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid at aut beatae blanditiis debitis exercitationem itaque iusto nemo nisi officia pariatur praesentium, provident quae repudiandae sint tempore temporibus unde. Libero.
 </p>
 
-<hr>
-
-<button id="button1">Change Hello World to JavaScript is Cool!</button><br>
-<button id="button2">Change Sub-header color to blue</button><br>
-<button id="button3">Set List Items red</button><br>
-<button id="button4">Change first item to blue</button><br>
-
+<div class="buttons">
+    <button id="button1">Change Hello World to JavaScript is Cool!</button><br>
+    <button id="button2">Change sub-header color to blue</button><br>
+    <button id="button3">Set list items red</button><br>
+    <button id="button4">Change paragraph to "Mission Accomplished!"</button><br>
+</div>
 
 <script>
 
@@ -54,17 +61,31 @@
 
 		// TODO: Set inner html of mainHeader to "JavaScript is Cool"
         function jsIsCool() {
-			mainHeader.innerText = "Javascript is cool!"
+			if (mainHeader.innerText==="Hello World!") {
+				mainHeader.innerText = "JavaScript is cool!";
+				button1.innerText = "Change 'Javascript is cool!' back to 'Hello World!'";
+			} else {
+				mainHeader.innerText = "Hello World!";
+				button1.innerText = "Change Hello World to JavaScript is Cool!";
+			}
 		}
 		var button1 = document.getElementById("button1");
 		button1.addEventListener("click", jsIsCool);
+
+
 
 		// TODO: Uncomment the next line and get the sub header element by id
 		var subHeader = document.getElementById("sub-header");
 
 		// TODO: Set the text color of subHeader to blue
         function setToBlue() {
-			subHeader.style.color = "blue";
+			if (subHeader.style.color === "black") {
+				subHeader.style.color = "blue";
+				button2.innerText = "Change sub-header color back to black";
+			} else {
+				subHeader.style.color = "black";
+				button2.innerText = "Change sub-header color to blue";
+            }
 		}
 		var button2 = document.getElementById("button2");
 		button2.addEventListener("click", setToBlue)
@@ -74,9 +95,17 @@
 
 		// TODO: Set text color on every other list item to grey
         function setListItemsRed() {
-			for (var i = 0; i < listItems.length; i++) {
-				listItems[i].style.color = "red";
-            }
+			if (listItems[1].style.color==="black"){
+                for (var i = 0; i < listItems.length; i++) {
+					listItems[i].style.color = "red";
+				}
+                button3.innerText = "Set list items back to black";
+            } else {
+				for (var i = 0; i < listItems.length; i++) {
+					listItems[i].style.color = "black";
+				}
+				button3.innerText = "Set list items to red";
+			}
         }
 
 		var button3 = document.getElementById("button3");
@@ -84,21 +113,24 @@
 
 		// TODO: Set text color of li with dbid = 1 to blue
         var button4 = document.getElementById("button4");
-		button4.addEventListener("click", changeFirstItemRed)
+		button4.addEventListener("click", changeParagraph)
 
-        function changeFirstItemRed(){
-			var dbid1 = document.querySelector(".firstItem")
-            dbid1.style.color = "blue"
+        function changeParagraph(){
+			if (button4.innerText==='Change paragraph to "Mission Accomplished!"'){
+                subParagraphs[0].innerText = "Mission Accomplished!";
+                button4.innerText = "Change 'Mission Accomplished' back to paragraph";
+            } else {
+				subParagraphs[0].innerText = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias aperiam autem ex fuga illum incidunt maiores molestiae mollitia neque nisi, nobis quidem quod recusandae sapiente sunt tenetur veritatis, vitae voluptates.";
+                button4.innerText = 'Change paragraph to "Mission Accomplished!"';
+            }
         }
+
 
 		// TODO: Uncomment the next line and get all elements with class name sub-paragraph
 		var subParagraphs = document.getElementsByClassName("sub-paragraph");
-		console.log(subParagraphs)
 
 		// TODO: Change the text in the first sub-paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished!"
 
-        document.get
 	})();
 </script>
 </body>
