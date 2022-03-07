@@ -201,3 +201,135 @@ function isLockNessMonster(string) {
 		return false;
 	} return false;
 }
+
+//----------------------------------------------------------------------------
+// Mar 4
+// create a function that accepts an objects with two properties, parcelNumber and weight and returns the weight
+
+function parcelWeight(object){
+	return object.weight;
+}
+
+var parcel = {
+	parcelNumber: 1,
+	weight: 20
+}
+
+// Create a function that accepts an array of objects with two properties, parcelNumber and weight, and returns the total weight of all parcels
+
+var parcels = [{
+	parcelNumber:1,
+	weight:20
+}, {
+	parcelNumber:2,
+	weight:25
+}]
+// output:45
+
+
+function totalWeight(arrayOfObjects){
+	var total = 0;
+	for (var i=0; i < arrayOfObjects.length; i++){
+		total += arrayOfObjects[i].weight;
+	}
+	return total;
+}
+
+// Create a function that accepts an array of objects with two properties, parcelNumber amd weight, and outputs the content to a web page in two columns, with the total listed at the end
+
+function outputParcelInfo(parcelsArray){
+	var outputDiv = document.getElementById("parcelInfo");
+	var total = 0;
+	var html = "<table><tr><th>Parcel Number</th><th>Weight</th></tr></table>"
+}
+
+//DOM warmup: 
+//create a heading that says" good morning!"
+//create a button that says "Press if after 12pm"
+//When the button is pressed, "Good morning!" changes to "Good afternoon"
+
+var goodMorning = document.getElementById('good-morning');
+var button = document.getElementById('button');
+
+button.addEventListener('click', changeToAfternoon);
+
+function changeToAfternoon(){
+	if (goodMorning.innerText === "Good morning!"){
+		goodMorning.innerText = "Good afternoon!";
+		button.innerText = "Press if before 12pm";
+	} else {
+		goodMorning.innerText = "Good morning!";
+		button.innerText = "Press if after 12pm";
+	}
+}
+
+//-----------------------------------------------------------------------
+// Mar 7
+
+// Consider the following array of users:
+
+var users = [
+	{
+		username: 'fsmith',
+		email: 'fsmith@email.com',
+		numberOfLogins: 23
+	},
+	{
+		username: 'ksmith',
+		email: 'ksmith@email.com',
+		numberOfLogins: 100
+	},
+	{
+		username: 'lsmith',
+		email: 'lsmith@email.com',
+		numberOfLogins: 10
+	}
+];
+
+// 1. Create a function, returnFirstUser, that takes in an array of user objects and returns the first user object.
+//
+// returnFirstUser(users) should return...
+//
+// {
+// 	username: 'fsmith',
+// 		email: 'fsmith@email.com',
+// 	numberOfLogins: 23
+// }
+//
+function returnFirstUser(arrayOfObjects){
+	return arrayOfObjects[0];
+}
+
+// 2. Create a function, returnTotalUserLogins, that takes in an array of user objects and returns the total count of logins
+// for all users.
+//
+// returnTotalUserLogins(users) should return... 133
+//
+
+function returnTotalUserLogins(arrayOfObjects){
+	var totalLogins = 0;
+	for (var i=0; i<arrayOfObjects.length; i++){
+		totalLogins += arrayOfObjects[i].numberOfLogins;
+	}
+	return totalLogins;
+}
+
+
+// 3. (optional bonus) create a function, returnMostFrequentUser, that takes in an array of user objects and returns the
+// user object with the highest number of logins.
+//
+//
+// returnMostFrequentUser(users) should return...
+//
+// {
+// 	username: 'ksmith',
+// 		email: 'ksmith@email.com',
+// 	numberOfLogins: 100
+// }
+
+function returnMostFrequentUser(arrayOfObjects){
+	arrayOfObjects.sort((a,b) => (a.numberOfLogins > b.numberOfLogins) ? 1 : ((b.numberOfLogins > a.numberOfLogins) ? -1 : 0));
+	arrayOfObjects.reverse();
+	return arrayOfObjects[0];
+}
+
