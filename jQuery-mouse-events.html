@@ -64,13 +64,13 @@
 		// });
 
 		// with defined handler
-
+        //
 		// var mainContainer = document.getElementById('container');
-		//
+        //
 		// function logEventOb(e) {
 		//     console.log(e);
 		// }
-		//
+        //
 		// mainContainer.addEventListener("click", logEventOb);
 
 
@@ -87,9 +87,27 @@
 		// function logEventOb(e) {
 		//     console.log(e);
 		// }
-		//
+        //
 		// $('#container').click(logEventOb);
 
+        $('li').click(function(e){
+			console.log(e);
+        });
+
+		$('li').click(console.log);
+
+        $("#box").click(function(){
+			$("#box").css({
+                "background-color": "blue",
+                "border-radius": "50%"
+            })
+        })
+
+        //when a user clicks on a paragraph, change the text to "hello world"
+
+        $("p").click(function(){
+			$(this).text("Hello, World!");
+        })
 
 		// Double click and using "this" or "e.target"
 
