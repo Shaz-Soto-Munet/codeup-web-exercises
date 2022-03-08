@@ -333,3 +333,76 @@ function returnMostFrequentUser(arrayOfObjects){
 	return arrayOfObjects[0];
 }
 
+//----------------------------------------------------------
+// Mar 8
+
+//
+// Create a function, computeOperations, that takes in an array of operation objects and a starting integer value and returns an integer after all the calculations have completed, using the second integer argument as the first operand. Each operation object will have the following shape:
+//
+
+
+var operations1 = [
+
+	{
+		operation: 'add',
+		integer: 7
+	},
+	{
+		operation: 'add',
+		integer: 3
+	}
+]
+
+
+var operations2 = [
+
+	{
+		operation: 'add',
+		integer: 7
+	},
+	{
+		operation: 'add',
+		integer: 3
+	},
+	{
+		operation: 'multiply',
+		integer: 3
+	},
+]
+
+var operations3 = [
+
+	{
+		operation: 'subtract',
+		integer: 5
+	},
+	{
+		operation: 'multiply',
+		integer: -2
+	},
+	{
+		operation: 'add',
+		integer: 10
+	},
+]
+
+
+function computeOperations(operations, startingValue){
+	var finalizedOperation = startingValue;
+	for (var i=0; i<operations.length; i++){
+		if (operations[i].operation === "add"){
+			finalizedOperation += operations[i].integer;
+		} else if (operations[i].operation === "multiply"){
+			finalizedOperation *= operations[i].integer;
+		} else if (operations[i].operation === "subtract"){
+			finalizedOperation -= operations[i].integer;
+		}
+	}
+	return finalizedOperation;
+}
+
+
+console.log(computeOperations(operations1, 10)); // returns 20
+console.log(computeOperations(operations2, 10)); // returns 60
+console.log(computeOperations(operations3, 10)); // returns 0
+
