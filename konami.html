@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Konami Code</title>
+</head>
+<body>
+<h1>Konami Code</h1>
+
+<script src="js/jquery.js"></script>
+<script>
+  "use strict";
+
+  //left key = 37
+  //right key = 39
+  //up key = 38
+  //down key = 40
+  //a = 65
+  //b = 66
+
+  var userInput = "";
+  var konamiCode = "ArrowUpArrowUpArrowDownArrowDownArrowLeftArrowRightArrowLeftArrowRightba";
+
+
+  $(document).on("keyup", function (e) {
+    userInput += e.key;
+    console.log(userInput);
+    if (userInput === konamiCode) {
+      window.open("https://en.wikipedia.org/wiki/Konami_Code");
+    }
+  });
+
+
+
+</script>
+</body>
+</html>

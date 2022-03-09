@@ -28,8 +28,8 @@
     // recognizes all keyboard keys when they are pushed down
     // repeats as key is held down
 
-    // $(document).keydown(function() {
-    //     console.log("Key down");
+    // $(document).keydown(function(e) {
+    //     console.log(e.key);
     // });
 
 
@@ -55,9 +55,9 @@
 
     // keyboard events listeners can be bound to specific DOM elements
 
-    // $('#input-example').keyup(function(e) {
-    //     console.log('From input element: ' + $(e.target).val());
-    // });
+    $('#input-example').keyup(function(e) {
+        console.log('From input element: ' + $(e.target).val());
+    });
 
     /*
 
