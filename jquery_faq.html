@@ -71,27 +71,31 @@
 </dl>
 
     <ul>
-        <li>List 1</li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>List 1: Item 1</li>
+        <li>List 1: Item 2</li>
+        <li>List 1: Item 3</li>
+        <li>List 1: Item 4</li>
     </ul>
 
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>List 2: Item 1</li>
+        <li>List 2: Item 2</li>
+        <li>List 2: Item 3</li>
+        <li>List 2: Item 4</li>
     </ul>
 
     <ul>
-        <li></li>
-        <li></li>
-        <li></li>
-        <li></li>
+        <li>List 3: Item 1</li>
+        <li>List 3: Item 2</li>
+        <li>List 3: Item 3</li>
+        <li>List 3: Item 4</li>
     </ul>
 
+<button>Highlight Last List Items</button>
+<br>
+<br>
 <button>Toggle Answers</button>
+
 
 <script src="js/jquery.js"></script>
 <script>
@@ -100,7 +104,7 @@
 
 	$(document).ready(function() {
 
-		$("button").on("click", function(){
+		$("button").last().on("click", function(){
 			$("dd").toggleClass("invisible");
         })
 
@@ -111,8 +115,15 @@
 			$( this ).next('dd').toggleClass( 'highlight' );
 		})
 
+        $("button").first().click(function(){
+			$("ul").each(function(index, element){
+				$(element).children().last().css("background", "yellow");
+            })
 
-    });
+			});
+		})
+
+
 
 </script>
 
