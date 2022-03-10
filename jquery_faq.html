@@ -21,6 +21,14 @@
             background-color: yellow;
         }
 
+        .bold {
+            font-weight: bold;
+        }
+
+        .blue-text{
+            color: blue;
+        }
+
     </style>
 </head>
 <body>
@@ -69,27 +77,27 @@
     <dt>Can I drive my RV along the Going-to-the-Sun Road?</dt>
     <dd class="invisible">Vehicles, and vehicle combinations, longer than 21 feet (including bumpers) or wider than 8 feet (including mirrors) are prohibited between Avalanche Campground and the Sun Point parking area. You may however, drive to Avalanche if traveling east, and to Sun Point, if traveling west. Vehicles over 10 feet in height may have difficulty driving west from Logan Pass due to rock overhangs. Stock trucks and trailers may access Packers Roost and Siyeh Bend.</dd>
 </dl>
+    <h3>Lists</h3>
+        <ul>
+            <li>List 1: Item 1</li>
+            <li>List 1: Item 2</li>
+            <li>List 1: Item 3</li>
+            <li>List 1: Item 4</li>
+        </ul>
 
-    <ul>
-        <li>List 1: Item 1</li>
-        <li>List 1: Item 2</li>
-        <li>List 1: Item 3</li>
-        <li>List 1: Item 4</li>
-    </ul>
+        <ul>
+            <li>List 2: Item 1</li>
+            <li>List 2: Item 2</li>
+            <li>List 2: Item 3</li>
+            <li>List 2: Item 4</li>
+        </ul>
 
-    <ul>
-        <li>List 2: Item 1</li>
-        <li>List 2: Item 2</li>
-        <li>List 2: Item 3</li>
-        <li>List 2: Item 4</li>
-    </ul>
-
-    <ul>
-        <li>List 3: Item 1</li>
-        <li>List 3: Item 2</li>
-        <li>List 3: Item 3</li>
-        <li>List 3: Item 4</li>
-    </ul>
+        <ul>
+            <li>List 3: Item 1</li>
+            <li>List 3: Item 2</li>
+            <li>List 3: Item 3</li>
+            <li>List 3: Item 4</li>
+        </ul>
 
 <button>Highlight Last List Items</button>
 <br>
@@ -117,11 +125,33 @@
 
         $("button").first().click(function(){
 			$("ul").each(function(index, element){
-				$(element).children().last().css("background", "yellow");
+				$(element)
+                    .children()
+                    .last()
+                    .toggleClass("highlight");
             })
 
-			});
-		})
+        });
+
+		$("h3").on("click", function(){
+			$("li").toggleClass("bold");
+        })
+
+        $('li').click(function(){
+			$(this)
+                .parent()
+                .children()
+                .first()
+                .toggleClass("blue-text")
+        })
+
+
+
+
+
+    })
+
+
 
 
 
