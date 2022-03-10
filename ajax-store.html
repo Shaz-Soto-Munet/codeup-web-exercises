@@ -3,6 +3,17 @@
 <html>
 <head>
   <title>Online Store</title>
+  <style>
+
+    table {
+      text-align: center;
+    }
+
+    table * {
+      padding: 5px;
+    }
+
+  </style>
 </head>
 <body>
 
@@ -10,27 +21,55 @@
 
 <table id="products">
   <thead>
-  <tr>
-    <th>Title</th>
-    <th>Quantity</th>
-    <th>Price</th>
-    <th>Categories</th>
-  </tr>
+    <tr>
+      <th>Title</th>
+      <th>Quantity</th>
+      <th>Price</th>
+      <th>Categories</th>
+    </tr>
   </thead>
-  <tbody id="insertProducts"></tbody>
+  <tbody id="insertProducts">
+
+  </tbody>
 </table>
 
-<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+<script src="js/jquery.js"></script>
 
 <script>
   (function() {
     "use strict";
     // TODO: Create an AJAX GET request for the file under data/inventory.json
 
+    var orders;
+
+    $.get("data/inventory.json").done(function(data){
+      orders = data;
+      console.log(orders)
+      populateHTML();
+    })
+
     // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
     //             its contents and fields
     //       HINT: You will want to target #insertProducts for your new HTML elements
+
+
+    function populateHTML(){
+      var html
+      for (var i = 0; i < orders.length; i++) {
+         html +=
+                "  <tr>\n" +
+                "    <td>" + orders[i].title + "</td>\n" +
+                "    <td>" + orders[i].quantity + "</td>\n" +
+                "    <td>" + orders[i].price + "</td>\n" +
+                "    <td>" + orders[i].categories + "</td>\n" +
+                "  </tr>"
+
+        $("#insertProducts").html(html);
+      }
+    }
+
+
   })();
 </script>
 
