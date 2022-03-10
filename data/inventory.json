@@ -43,6 +43,15 @@
       "tool"
     ],
     "price": 10
+  },
+
+  {
+    "title": "Saw",
+    "quantity": 10,
+    "categories": [
+      "tool"
+    ],
+    "price": 200
   }
 
 

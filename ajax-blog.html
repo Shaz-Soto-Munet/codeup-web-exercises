@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX Blog</title>
+</head>
+<body>
+
+<h1>Blog</h1>
+
+<div id="posts"></div>
+
+<script src="js/jquery.js"></script>
+<script>
+
+	"use strict";
+
+	var blogPosts;
+
+	$.get("data/blog.json").done(function(data){
+		blogPosts = data;
+		console.log(data);
+		populateHTML();
+    })
+
+    var html = "";
+
+	function populateHTML() {
+		for (var i = 0; i < blogPosts.length; i++) {
+			html += "<h3>" + blogPosts[i].title + "</h3>" +
+				"<p>" + blogPosts[i].content + "</p>"
+		}
+        $("#posts").html(html);
+	}
+
+
+
+</script>
+
+</body>
+</html>

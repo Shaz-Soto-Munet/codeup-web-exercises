@@ -3,6 +3,7 @@
 <html>
 <head>
   <title>Online Store</title>
+
   <style>
 
     table {
@@ -13,7 +14,14 @@
       padding: 5px;
     }
 
+    #update {
+      position: relative;
+      left: 150px;
+      top: 30px;
+    }
+
   </style>
+
 </head>
 <body>
 
@@ -29,9 +37,12 @@
     </tr>
   </thead>
   <tbody id="insertProducts">
-
   </tbody>
+
+
 </table>
+
+  <button id="update">Update</button>
 
 <script src="js/jquery.js"></script>
 
@@ -42,11 +53,14 @@
 
     var orders;
 
-    $.get("data/inventory.json").done(function(data){
-      orders = data;
-      console.log(orders)
-      populateHTML();
-    })
+    function requestData() {
+      $.get("data/inventory.json").done(function (data) {
+        orders = data;
+        console.log(orders)
+        populateHTML();
+      })
+    }
+    requestData();
 
     // TODO: Take the data from inventory.json and append it to the products table
     //       HINT: Your data should come back as a JSON object; use console.log() to inspect
@@ -62,12 +76,14 @@
                 "    <td>" + orders[i].title + "</td>\n" +
                 "    <td>" + orders[i].quantity + "</td>\n" +
                 "    <td>" + orders[i].price + "</td>\n" +
-                "    <td>" + orders[i].categories + "</td>\n" +
+                "    <td>" + orders[i].categories.join(", ") + "</td>\n" +
                 "  </tr>"
 
         $("#insertProducts").html(html);
       }
     }
+
+    $("#update").click(requestData);
 
 
   })();
