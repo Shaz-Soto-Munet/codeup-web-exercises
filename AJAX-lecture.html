@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AJAX</title>
+</head>
+<body>
+
+<main class="container mt-5">
+    <h1 class="my-5">Intro to AJAX</h1>
+    <form method="GET" action="https://hookb.in/7ZMlOkEa1BsWNgjjlK2o">
+        <div>
+            <label for="username" class="form-label">Username</label>
+            <input id="username" placeholder="Enter username" class="form-control" type="text" name="username">
+        </div>
+        <button class="btn btn-success my-2">Submit</button>
+    </form>
+    <a href="https://hookb.in/7ZMlOkEa1BsWNgjjlK2o">Some Link</a>
+</main>
+
+<section>
+<!--================================= AJAX REQUESTS-->
+
+<!--&#45;&#45; Reading Questions-->
+
+    <h3>What is AJAX and what is it used for?</h3>
+<p>
+Asynchronous Javascript And XML. It is used to update the html in the background without disrupting the user experience or design of the html page. It is a way to communicate with a server without refreshing the current webpage.
+</p>
+
+<h3>What is JSON and what is it used for?</h3>
+<p>
+JSON stands for JavaScript Object Notation. It is used for ease of reading and writing.
+</p>
+
+C<h3>an methods be included in a JSON file?</h3>
+<p>
+No methods can be included in a JSON file. Only Objects with property values of strings, numbers, objects, array, boolean, or null.
+<br>
+Only value and data is stored in JSON objects, not behavior.
+</p>
+
+<h3>What does 'jqXhr' represent in the curriculum AJAX examples?</h3>
+<p>
+jqXhr is the AJAX request object.
+</p>
+
+<h3></h3>What's the difference between $.ajax() and $.get()?</h3>
+<p>
+With the .ajax() method you can specifiy what type of request you are trying to make, such as: post, get, put, or delete.
+
+The .get() method is shorthand for the get request.
+    </p>
+
+<h3>Is jQuery required to make AJAX requests?</h3>
+<p>
+JQuery is not necessary to make AJAX requests, but jQuery it simplifies the syntax for AJAX requests.
+</p>
+
+<h3> What possible real world example can you think of where AJAX might be used?</h3>
+
+    <p>
+Real time stock price updating on a website.
+Weather updates.
+Infinite scrolling in social media sites.
+    </p>
+
+</section>
+
+
+<script src="js/jquery.js"></script>
+
+<script>
+	$(document).ready(function() {
+
+		"use strict";
+
+		// simple request
+
+		// $.ajax('./data/orders.json'); // jQuery request object
+
+		// $.ajax("./data/orders.json").done(function(responseData){
+		//     console.log(responseData);
+		// });
+
+		// DOESN'T WORK
+		// var responseData;
+		// $.ajax('./data/orders.json').done(function(data) {
+		//     responseData = data;
+		// }); // .done()
+		//
+		// console.log(responseData);
+
+		// simple API request
+
+		// $.ajax("https://swapi.dev/api/films")
+		//     .done(function(data){
+		//         console.log(data);
+		// });
+
+
+		// single argument with .done(), .fail() and .always() methods
+
+		// $.ajax({
+		//     "url": "https://swapi.dev/api/films",
+		//     "type": "GET",
+		//     "data": {
+		//         "search": "A New Hope"
+		//     }
+		// }).done(function(data, status, jqXhr) {
+		//     // console.log(status);
+		//     console.log(data);
+		//     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+		// }).fail(function(jqXhr, status, error) {
+		//     console.log("Request failed! " + status);
+		// }).always(function() {
+		//     console.log("Request made.");
+		// });
+
+
+		// Url first argument and configuration object second argument
+        //
+		// $.ajax("https://swapi.dev/api/films", {
+		//     "type": "GET",
+		//     "data": {
+		//         "search": "A N"
+		//     }
+		// }).done(function(data) {
+		//     console.log(data.results[1]);
+		// });
+
+
+
+
+		// Storing returned jQuery XML HTTP Response object
+
+		// var jqXhr = $.ajax("https://swapi.dev/api/films", {
+		//     "type": "GET",
+		//     "data": {
+		//         "search": "A New Hope"
+		//     }
+		// });
+		//
+		// console.log(jqXhr);
+		//
+		// jqXhr.done(function(data) {
+		//     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+		// });
+
+
+		// GET short-hand method
+
+		// $.get("https://swapi.dev/api/films", {
+		//     "data": {
+		//         "search": "A New Hope"
+		//     }
+		// }).done(function(data) {
+		//     console.log("The director of Star Wars: A New Hope is..." + data.results[0].director);
+		// });
+
+
+        var lukeSkywalker = $.ajax("https://swapi.dev/api/people/1");
+
+		{
+		}
+
+        var somePokemon = $.ajax("https://pokeapi.co/api/v2/pokemon-species/1");
+
+
+
+
+
+
+
+	});
+
+</script>
+
+
+
+</body>
+</html>
