@@ -21,10 +21,11 @@
     h1 {
         text-align: end;
         font-size: 50px;
+        margin-right: 5px;
     }
 
     p, details {
-        padding-left: 300px;
+        padding-left: 200px;
     }
 
     span {
@@ -33,22 +34,26 @@
         left: 20px;
     }
 
+    h3 {
+
+    }
+
 
 </style>
 <body>
 
-<h1 class="">Blog.</h1>
+<h1>Blog.</h1>
 <hr>
 
-<!--empty div where the blog posts are sent to-->
-<div id="posts" class=""></div>
+<!----empty div where the blog posts are sent to---->
+<div id="posts"></div>
 
 
 
 
 
 
-<!---------------------js----------------------------->
+<!----------------------js-------------------------->
 
 <script src="js/jquery.js"></script>
 <script>
@@ -71,8 +76,9 @@
 				"<p>" + blogPosts[i].content + "</p>" +
                 "<details>" +
                 "<span> Categories: " + blogPosts[i].categories.join(", ") + "</span><br>" +
-                "<span> Posted on: " + blogPosts[i].date + "</span>"
-                +"</details>"
+                "<span> Posted on: " + blogPosts[i].date + "</span>" +
+                "<summary>Categories | Date Posted</summary>" +
+                "</details>"
 		}
         $("#posts").html(html);
 	}
