@@ -19,10 +19,13 @@
 </head>
 <body>
 
-<h1>Babby's First Map</h1>
-<hr>
-<div id='map'></div>
-<hr>
+    <h1>Babby's First Map</h1>
+    <hr>
+    <div id='map'></div>
+    <hr>
+    <details>
+        <div>Starting location: San Antonio, just inside 1604 loop.</div>
+    </details>
 
 <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
 <script src="js/keys.js"></script>
@@ -38,6 +41,47 @@
 		center: [-98.5, 29.43], // starting position [lng, lat]
 		zoom: 10 // starting zoom
 	});
+
+	// ================================= Mapbox Mini Exercises
+    //
+	// Mini - Exercise 1 (before markers)
+    //
+	// In this file, create a Mapbox map that shows your home town. After 5 seconds, have the map automatically change to a map of the entire United States using a satellite style.
+
+    map.setCenter([-66.61, 18]);
+	map.setZoom(12)
+
+    function moveToTheUnitedStates(){
+		map.setCenter([-95, 37]);
+		map.setZoom(3);
+        map.setStyle('mapbox://styles/mapbox/satellite-v9');
+    }
+
+	setTimeout(moveToTheUnitedStates, 5000);
+
+
+
+//	=================Marker===========================
+
+
+	var markers = [];
+
+	new mapboxgl.Marker()
+		.setLngLat([10, 10])
+		.addTo(map);
+
+	function addMarker(long, lat) {
+		var marker = new mapboxgl.Marker()
+			.setLngLat([long, lat])
+			.addTo(map);
+		markers.push(marker);
+    }
+
+
+//	==================Popups=====================
+
+
+
 
 </script>
 

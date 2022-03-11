@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Map Exercise 2</title>
+    <link  href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet'>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        #map {
+            width: 98%;
+            height: 500px;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Babby's First Map</h1>
+<hr>
+<div id='map'></div>
+<hr>
+<details>
+    <div>Starting location: San Antonio, just inside 1604 loop.</div>
+</details>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script>
+	"use strict";
+
+	console.log(MAPBOX_API_TOKEN);
+
+	mapboxgl.accessToken =  MAPBOX_API_TOKEN;
+	const map = new mapboxgl.Map({
+		container: 'map', // container ID
+		style: 'mapbox://styles/mapbox/streets-v11', // style URL
+		center: [-77.03, 38.9], // starting position [lng, lat]
+		zoom: 10 // starting zoom
+	});
+
+	// Mini - Exercise 2
+    //
+	// In this file, create a Mapbox map that shows Washington D.C. and places a marker on the Lincoln Memorial.
+    //
+	// 	Bonus: when the marker is dragged and released, display the coordinates in an h1
+    //
+    //
+	// Mini - Exercise 3
+    //
+	// Create an HTML file called mapbox-3.html and copy your code over from mapbox-2. Add a popup to the Lincoln Memorial marker that contains the text "Lincoln Memorial"
+    //
+
+    var lincolnMemorial = new mapboxgl.Marker()
+        .setLngLat([-77.050175, 38.88933])
+        .addTo(map)
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

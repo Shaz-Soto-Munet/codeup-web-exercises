@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Map 3</title>
+    <link  href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet'>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        #map {
+            width: 98%;
+            height: 500px;
+            margin: auto;
+        }
+    </style>
+
+</head>
+<body>
+
+<h1>Babby's First Map</h1>
+<hr>
+
+<div id='map'></div>
+<hr>
+
+<details>
+    <div>Starting location: Washington D.C.</div>
+</details>
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<script src="js/keys.js"></script>
+<script src="js/mapbox-geooder-utils.js"></script>
+<script>
+	"use strict";
+
+	console.log(MAPBOX_API_TOKEN);
+
+	mapboxgl.accessToken =  MAPBOX_API_TOKEN;
+	const map = new mapboxgl.Map({
+		container: 'map', // container ID
+		style: 'mapbox://styles/mapbox/streets-v11', // style URL
+		center: [-77.03, 38.9], // starting position [lng, lat]
+		zoom: 10 // starting zoom
+	});
+
+
+	// Mini - Exercise 3
+	//
+	// Create an HTML file called mapbox-3.html and copy your code over from mapbox-2. Add a popup to the Lincoln Memorial marker that contains the text "Lincoln Memorial"
+	//
+
+	var lincolnMemorial = new mapboxgl.Marker()
+		.setLngLat([-77.050175, 38.88933])
+		.addTo(map)
+
+	var popup = new mapboxgl.Popup()
+		.setHTML('<h1>Lincoln Memorial</h1>');
+
+	lincolnMemorial.setPopup(popup);
+
+	geocode("The Alamo San Antonio", MAPBOX_API_TOKEN).then(function(data){
+		console.log(data);
+    })
+
+	geocode("Paris, Texas", MAPBOX_API_TOKEN).then(function(data){
+		console.log(data);
+	})
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
