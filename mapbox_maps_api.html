@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mapbox Exercise</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+
+</head>
+<body>
+
+    <h1>Mapbox Exercise</h1>
+    <hr>
+    <div id='map' style='width: 400px; height: 300px;'></div>
+
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+    <script src="js/keys.js"></script>
+
+    <script>
+		mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+		const map = new mapboxgl.Map({
+			container: 'map', // container ID
+			style: 'mapbox://styles/mapbox/streets-v11', // style URL
+			center: [-74.5, 40], // starting position [lng, lat]
+			zoom: 9 // starting zoom
+		});
+    </script>
+
+    <script>
+
+		"use strict";
+
+		var laGardeniaCoordinates
+
+		function goTo(coordinatesArray) {
+			map.setCenter(coordinatesArray);
+		}
+
+            geocode("La Gardenia San Antonio", MAPBOX_API_TOKEN).then(function(data){
+				laGardeniaCoordinates = data;
+				goTo(laGardeniaCoordinates);
+            });
+
+    </script>
+
+
+
+</body>
+</html>
