@@ -42,15 +42,19 @@
         }
 
 		function setMarker(coordinatesArray){
-			mapboxgl.Marker()
+			new mapboxgl.Marker()
                     .setLngLat(coordinatesArray)
                     .addTo(map);
         }
 
-            geocode("La Gardenia San Antonio", MAPBOX_API_TOKEN).then(function(data){
+		function laGardeniaMarker() {
+			geocode("La Gardenia San Antonio", MAPBOX_API_TOKEN).then(function (data) {
 				laGardeniaCoordinates = data;
 				goTo(laGardeniaCoordinates);
-            });
+				setMarker(laGardeniaCoordinates);
+				setZoom(14);
+			});
+		}
 
 
 
