@@ -41,32 +41,24 @@
 	const map = new mapboxgl.Map({
 		container: 'map', // container ID
 		style: 'mapbox://styles/mapbox/streets-v11', // style URL
-		center: [-77.03, 38.9], // starting position [lng, lat]
+		center: [-98.5, 29.38], // starting position [lng, lat]
 		zoom: 10 // starting zoom
 	});
 
 
-	// Mini - Exercise 3
-	//
-	// Create an HTML file called mapbox-3.html and copy your code over from mapbox-2. Add a popup to the Lincoln Memorial marker that contains the text "Lincoln Memorial"
-	//
 
-	var lincolnMemorial = new mapboxgl.Marker()
-		.setLngLat([-77.050175, 38.88933])
-		.addTo(map)
+	// Mini - Exercise 4 (before final exercise)
+    //
+	// Create an HTML file called mapbox-4.html centered on San Antonio that programmatically is re-centered over Zion National Park using the coordinates of the park by geocoding the physical address.
 
-	var popup = new mapboxgl.Popup()
-		.setHTML('<h1>Lincoln Memorial</h1>');
-
-	lincolnMemorial.setPopup(popup);
-
-	geocode("The Alamo San Antonio", MAPBOX_API_TOKEN).then(function(data){
+	geocode("Zion National Park", MAPBOX_API_TOKEN).then(function(data){
 		console.log(data);
-    })
-
-	geocode("Paris, Texas", MAPBOX_API_TOKEN).then(function(data){
-		console.log(data);
+	    setTimeout(function(){map.setCenter(data)}, 5000);
 	})
+
+	//
+	// 	Add the latitude and longitude of Honolulu, Hawaii and use reverse geocoding to move the map to this location by geocoding inside of the reverseGeocode function.
+    //
 
 
 
