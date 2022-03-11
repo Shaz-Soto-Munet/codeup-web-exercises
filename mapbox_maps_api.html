@@ -37,10 +37,18 @@
 			map.setCenter(coordinatesArray);
 		}
 
+		function setZoom(number){
+			map.setZoom(number);
+        }
+
             geocode("La Gardenia San Antonio", MAPBOX_API_TOKEN).then(function(data){
 				laGardeniaCoordinates = data;
 				goTo(laGardeniaCoordinates);
             });
+
+
+
+
 
     </script>
 
