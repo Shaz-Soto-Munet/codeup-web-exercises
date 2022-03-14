@@ -18,10 +18,13 @@
         #days{
             display: flex;
         }
+        #current-temp{
+            text-align: center;
+        }
         .days {
             border: 1px solid black;
             width: 20%;
-            height: 200px;
+            height: 100px;
             margin: 5px;
         }
     </style>
@@ -35,38 +38,14 @@
 <hr>
 <div id='map'></div>
 <hr>
+<div id="current-temp"></div>
+<hr>
 <div id="days">
-    <div id="day1" class="days">
-        <div class="current-temp"></div>
-        <div class="highest-temp"></div>
-        <div class="lowest-temp"></div>
-        <div class="weather"></div>
-    </div>
-    <div id="day2" class="days">
-        <div class="current-temp"></div>
-        <div class="highest-temp"></div>
-        <div class="lowest-temp"></div>
-        <div class="weather"></div>
-    </div>
-    <div id="day3" class="days">
-        <div class="current-temp"></div>
-        <div class="highest-temp"></div>
-        <div class="lowest-temp"></div>
-        <div class="weather"></div>
-    </div>
-    <div id="day4" class="days">
-        <div class="current-temp"></div>
-        <div class="highest-temp"></div>
-        <div class="lowest-temp"></div>
-        <div class="weather"></div>
-    </div>
-    <div id="day5" class="days">
-        <div class="current-temp"></div>
-        <div class="highest-temp"></div>
-        <div class="lowest-temp"></div>
-        <div class="weather"></div>
-    </div>
-
+    <div id="day1" class="days"></div>
+    <div id="day2" class="days"></div>
+    <div id="day3" class="days"></div>
+    <div id="day4" class="days"></div>
+    <div id="day5" class="days"></div>
 </div>
 
 
@@ -92,43 +71,72 @@
 			zoom: 8.8 // starting zoom
 		});
     </script>
+<!--custom script-->
     <script>
 		"use strict";
 
+		var markerLngLat = [];
 		var currentTemp = [];
 		var highestTemp = [];
 		var lowestTemp = [];
 		var weather = [];
 
-
+    function getForecast(lng, lat) {
 		$.get('https://api.openweathermap.org/data/2.5/onecall', {
-			lat: 29.4252,
-			lon: -98.4916,
+			lat: lat,
+			lon: lng,
 			appid: OPEN_WEATHER_TOKEN,
-			exclude: 'minutely,hourly,current,alerts',
+			exclude: 'minutely,hourly,alerts',
 			units: 'imperial'
-		}).done(function(data) {
-			console.log(data)
-            for (var i=0; i<5; i++) {
-				currentTemp.push(data.daily[i].feels_like.day);
+		}).done(function (data) {
+			currentTemp =  [];
+			highestTemp = [];
+			lowestTemp = [];
+			weather = [];
+			for (var i = 0; i < 5; i++) {
+				currentTemp.push(data.current.feels_like);
 				highestTemp.push(data.daily[i].temp.max);
 				lowestTemp.push(data.daily[i].temp.min);
 				weather.push(data.daily[i].weather[0].description);
 			}
-			populateDays()
+			populateForecast()
+			console.log("Function getForecast ran.")
 		})
+	}
 
 
-        function populateDays() {
+        function populateForecast() {
+			$(".days").html();
+			$("#current-temp").text();
+			$("#current-temp").text("Current temperature: " + currentTemp[0] + "°")
 			for (var i=0; i<5; i++) {
 				$("#day" + (i+1)).html(
-					"<div class=\"current-temp\">" + currentTemp[i] + "</div>\n" +
 					"<div class=\"highest-temp\">" + highestTemp[i] + "</div>\n" +
 					"<div class=\"lowest-temp\">" + lowestTemp[i] + "</div>\n" +
 					"<div class=\"weather\">" + weather[i] + "</div>")
 			}
+			console.log("Function populateForecast ran")
 		}
 
+		var marker = new mapboxgl.Marker({draggable: true})
+            .setLngLat([-98.5, 29.435])
+			.addTo(map);
+
+
+        markerLngLat.push(marker._lngLat.lng);
+        markerLngLat.push(marker._lngLat.lat);
+
+		getForecast(markerLngLat[0], markerLngLat[1]);
+
+		map.setCenter(markerLngLat)
+
+        marker.on("dragend", function(){
+			markerLngLat = [];
+			markerLngLat.push(marker._lngLat.lng);
+			markerLngLat.push(marker._lngLat.lat)
+			console.log(markerLngLat)
+			getForecast(markerLngLat[0], markerLngLat[1]);
+        })
     </script>
 
 
