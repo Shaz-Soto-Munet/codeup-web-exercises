@@ -36,11 +36,37 @@
 <div id='map'></div>
 <hr>
 <div id="days">
-    <div class="days">Day 1:</div>
-    <div class="days">Day 2:</div>
-    <div class="days">Day 3:</div>
-    <div class="days">Day 4:</div>
-    <div class="days">Day 5:</div>
+    <div id="day1" class="days">
+        <div class="current-temp"></div>
+        <div class="highest-temp"></div>
+        <div class="lowest-temp"></div>
+        <div class="weather"></div>
+    </div>
+    <div id="day2" class="days">
+        <div class="current-temp"></div>
+        <div class="highest-temp"></div>
+        <div class="lowest-temp"></div>
+        <div class="weather"></div>
+    </div>
+    <div id="day3" class="days">
+        <div class="current-temp"></div>
+        <div class="highest-temp"></div>
+        <div class="lowest-temp"></div>
+        <div class="weather"></div>
+    </div>
+    <div id="day4" class="days">
+        <div class="current-temp"></div>
+        <div class="highest-temp"></div>
+        <div class="lowest-temp"></div>
+        <div class="weather"></div>
+    </div>
+    <div id="day5" class="days">
+        <div class="current-temp"></div>
+        <div class="highest-temp"></div>
+        <div class="lowest-temp"></div>
+        <div class="weather"></div>
+    </div>
+
 </div>
 
 
@@ -65,6 +91,44 @@
 			center: [-98.5, 29.435], // starting position [lng, lat]
 			zoom: 8.8 // starting zoom
 		});
+    </script>
+    <script>
+		"use strict";
+
+		var currentTemp = [];
+		var highestTemp = [];
+		var lowestTemp = [];
+		var weather = [];
+
+
+		$.get('https://api.openweathermap.org/data/2.5/onecall', {
+			lat: 29.4252,
+			lon: -98.4916,
+			appid: OPEN_WEATHER_TOKEN,
+			exclude: 'minutely,hourly,current,alerts',
+			units: 'imperial'
+		}).done(function(data) {
+			console.log(data)
+            for (var i=0; i<5; i++) {
+				currentTemp.push(data.daily[i].feels_like.day);
+				highestTemp.push(data.daily[i].temp.max);
+				lowestTemp.push(data.daily[i].temp.min);
+				weather.push(data.daily[i].weather[0].description);
+			}
+			populateDays()
+		})
+
+
+        function populateDays() {
+			for (var i=0; i<5; i++) {
+				$("#day" + (i+1)).html(
+					"<div class=\"current-temp\">" + currentTemp[i] + "</div>\n" +
+					"<div class=\"highest-temp\">" + highestTemp[i] + "</div>\n" +
+					"<div class=\"lowest-temp\">" + lowestTemp[i] + "</div>\n" +
+					"<div class=\"weather\">" + weather[i] + "</div>")
+			}
+		}
+
     </script>
 
 
