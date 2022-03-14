@@ -3,8 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Weather Map</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        #map {
+            width: 90%;
+            height: 400px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 0;
+        }
+
+        #days{
+            display: flex;
+        }
+        .days {
+            border: 1px solid black;
+            width: 20%;
+            height: 200px;
+            margin: 5px;
+        }
+    </style>
 </head>
 <body>
+
+<h1>Mapbox Exercise</h1>
+<hr>
+<input type="search" id="search-box">
+<button>Search</button>
+<hr>
+<div id='map'></div>
+<hr>
+<div id="days">
+    <div class="days">Day 1:</div>
+    <div class="days">Day 2:</div>
+    <div class="days">Day 3:</div>
+    <div class="days">Day 4:</div>
+    <div class="days">Day 5:</div>
+</div>
+
+
+
+
+
+<!--    tokens-->
+    <script src="js/keys.js"></script>
+<!--jquery-->
+    <script src="js/jquery.js"></script>
+<!--geocode functions-->
+    <script src="js/mapbox-geocoder-utils.js"></script>
+<!--mapbox script-->
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
+<!--script to create map-->
+    <script>
+		mapboxgl.accessToken = MAPBOX_API_TOKEN;
+
+		const map = new mapboxgl.Map({
+			container: 'map', // container ID
+			style: 'mapbox://styles/mapbox/streets-v11', // style URL
+			center: [-98.5, 29.435], // starting position [lng, lat]
+			zoom: 8.8 // starting zoom
+		});
+    </script>
+
+
 
 </body>
 </html>
