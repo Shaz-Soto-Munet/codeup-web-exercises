@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Practice</title>
+</head>
+<body>
+
+<h1>Exercise to Practice Open Weather Map</h1>
+
+<script src="js/keys.js"></script>
+<script src="js/jquery.js"></script>
+
+<script>
+	"use strict";
+
+	$.get('https://api.openweathermap.org/data/2.5/onecall', {
+		lat: 29.4252,
+		lon: -98.4916,
+		appid: OPEN_WEATHER_TOKEN,
+		exclude: 'minutely,hourly,current,alerts',
+		units: 'imperial'
+	}).done(function(data) {
+		console.log(data);
+		console.log("The humidity for today in San Antonio is " + data.daily[0].humidity + "%.");
+		console.log("The highest temperature for today in San Antonio is " + data.daily[0].temp.max + "°.");
+	}).fail(function(jqXhr, status, error) {
+		console.log(jqXhr);
+		console.log(status);
+		console.log(error);
+	});
+
+
+
+
+</script>
+</body>
+</html>
