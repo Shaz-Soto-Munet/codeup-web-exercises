@@ -12,6 +12,9 @@
     <hr>
     <div id='map' style='width: 400px; height: 300px;'></div>
 
+    <button id="la-gardenia">Where to eat?</button>
+
+    <script src="js/jquery.js"></script>
     <script src="js/mapbox-geocoder-utils.js"></script>
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.7.0/mapbox-gl.js'></script>
     <script src="js/keys.js"></script>
@@ -47,14 +50,26 @@
                     .addTo(map);
         }
 
+		function createPopup(marker){
+            marker.setPopup(new mapboxgl.Popup()
+				.setHTML("<h1>La Gardenia</h1>"))
+        }
+
 		function laGardeniaMarker() {
 			geocode("La Gardenia San Antonio", MAPBOX_API_TOKEN).then(function (data) {
 				laGardeniaCoordinates = data;
 				goTo(laGardeniaCoordinates);
 				setMarker(laGardeniaCoordinates);
 				setZoom(14);
+				createPopup()
+				console.log(laGardeniaCoordinates)
+
 			});
 		}
+
+		$("#la-gardenia").click(laGardeniaMarker);
+
+
 
 
 
