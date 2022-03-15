@@ -79,6 +79,7 @@
     <script>
 		"use strict";
 
+		var sanAntonioCoordinates =  [-98.5, 29.435];
 		var markerLngLat = [];
 		var currentTemp = [];
 		var highestTemp = [];
@@ -127,16 +128,16 @@
 		var searchCoordinates;
         geocode(searchValue, MAPBOX_API_TOKEN).then(function(data){
 			searchCoordinates = data;
-        getForecast(searchCoordinates[0], searchCoordinates[1])
-        marker.setLngLat(searchCoordinates);
-		map.setCenter(searchCoordinates)
+            getForecast(searchCoordinates[0], searchCoordinates[1]);
+            marker.setLngLat(searchCoordinates);
+            map.setCenter(searchCoordinates)
+            getAddressData(searchCoordinates[0], searchCoordinates[1]);
         });
-		getAddressData();
 	}
 
 	//Creates marker at page load and places it on San Antonio by default
     var marker = new mapboxgl.Marker({draggable: true})
-        .setLngLat([-98.5, 29.435])
+        .setLngLat(sanAntonioCoordinates)
         .addTo(map);
 
     //Gets ingo info from the marker at page load and runs getForecast function
@@ -152,29 +153,34 @@
         markerLngLat.push(marker._lngLat.lat)
         console.log(markerLngLat)
         getForecast(markerLngLat[0], markerLngLat[1]);
-		getAddressData();
+		getAddressData(markerLngLat[0], markerLngLat[1]);
     })
 
     //Function uses data from the marker to create properties for markerAddress object. Invoked immediately at page load.
-    function getAddressData() {
-		reverseGeocode({lat: markerLngLat[1], lng: markerLngLat[0]}, MAPBOX_API_TOKEN).then(function (data) {
+    function getAddressData(long, lat) {
+		console.log(long, lat);
+		reverseGeocode({lat: lat, lng: long}, MAPBOX_API_TOKEN).then(function (data) {
 			markerAddressArray = data.split(",");
 			markerAddress.country = markerAddressArray[markerAddressArray.length - 1].trim();
 			markerAddress.zipCode = markerAddressArray[markerAddressArray.length - 2].trim().split(" ")[1];
 			markerAddress.state = markerAddressArray[markerAddressArray.length - 2].trim().split(" ")[0];
 			markerAddress.city = markerAddressArray[markerAddressArray.length - 3].trim();
 			markerAddress.street = markerAddressArray[markerAddressArray.length - 4].trim();
-			updateCity();
+			updateCity(markerAddress.city);
+
 		})
 	}
-	getAddressData();
+	getAddressData(sanAntonioCoordinates[0], sanAntonioCoordinates[1]);
 
-	function updateCity(){
+	function updateCity(city){
         $("#city").html("");
-        $("#city").html(markerAddress.city);
+        $("#city").html(city);
+		console.log(city);
     }
 
-    $("#search-btn").click(updateMarker);
+	$("#search-btn").click(function(){
+			updateMarker();
+        });
 
 
     </script>
