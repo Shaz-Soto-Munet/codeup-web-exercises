@@ -14,11 +14,14 @@
             text-align: center;
             margin-bottom: 0;
         }
+        h3 {
+            margin:5px;
+        }
 
         #days{
             display: flex;
         }
-        #current-temp{
+        #current-temp, #city{
             text-align: center;
         }
         .days {
@@ -34,10 +37,11 @@
 <h1>Mapbox Exercise</h1>
 <hr>
 <input type="search" id="search-box">
-<button>Search</button>
+<button id="search-btn">Search</button>
 <hr>
 <div id='map'></div>
 <hr>
+<h3 id="city">San Antonio</h3>
 <div id="current-temp"></div>
 <hr>
 <div id="days">
@@ -100,43 +104,54 @@
 				weather.push(data.daily[i].weather[0].description);
 			}
 			populateForecast()
-			console.log("Function getForecast ran.")
 		})
 	}
 
+    function populateForecast() {
+        $(".days").html();
+        $("#current-temp").text();
+        $("#current-temp").text("Current temperature: " + currentTemp[0] + "°")
+        for (var i=0; i<5; i++) {
+            $("#day" + (i+1)).html(
+                "<div class=\"highest-temp\">" + highestTemp[i] + "</div>\n" +
+                "<div class=\"lowest-temp\">" + lowestTemp[i] + "</div>\n" +
+                "<div class=\"weather\">" + weather[i] + "</div>")
+        }
+    }
 
-        function populateForecast() {
-			$(".days").html();
-			$("#current-temp").text();
-			$("#current-temp").text("Current temperature: " + currentTemp[0] + "°")
-			for (var i=0; i<5; i++) {
-				$("#day" + (i+1)).html(
-					"<div class=\"highest-temp\">" + highestTemp[i] + "</div>\n" +
-					"<div class=\"lowest-temp\">" + lowestTemp[i] + "</div>\n" +
-					"<div class=\"weather\">" + weather[i] + "</div>")
-			}
-			console.log("Function populateForecast ran")
-		}
+	function updateMarker(){
+		var searchValue = $("#search-box").val();
+		var searchCoordinates;
+        geocode(searchValue, MAPBOX_API_TOKEN).then(function(data){
+			searchCoordinates = data;
+        getForecast(searchCoordinates[0], searchCoordinates[1])
+        marker.setLngLat(searchCoordinates);
+		map.setCenter(searchCoordinates)
+        });
+	}
 
-		var marker = new mapboxgl.Marker({draggable: true})
-            .setLngLat([-98.5, 29.435])
-			.addTo(map);
+    var marker = new mapboxgl.Marker({draggable: true})
+        .setLngLat([-98.5, 29.435])
+        .addTo(map);
 
 
+    markerLngLat.push(marker._lngLat.lng);
+    markerLngLat.push(marker._lngLat.lat);
+
+    getForecast(markerLngLat[0], markerLngLat[1]);
+
+    map.setCenter(markerLngLat)
+
+    marker.on("dragend", function(){
+        markerLngLat = [];
         markerLngLat.push(marker._lngLat.lng);
-        markerLngLat.push(marker._lngLat.lat);
+        markerLngLat.push(marker._lngLat.lat)
+        console.log(markerLngLat)
+        getForecast(markerLngLat[0], markerLngLat[1]);
+    })
 
-		getForecast(markerLngLat[0], markerLngLat[1]);
+    $("#search-btn").click(updateMarker);
 
-		map.setCenter(markerLngLat)
-
-        marker.on("dragend", function(){
-			markerLngLat = [];
-			markerLngLat.push(marker._lngLat.lng);
-			markerLngLat.push(marker._lngLat.lat)
-			console.log(markerLngLat)
-			getForecast(markerLngLat[0], markerLngLat[1]);
-        })
     </script>
 
 
