@@ -41,7 +41,7 @@
 <hr>
 <div id='map'></div>
 <hr>
-<h3 id="city">San Antonio</h3>
+<h3 id="city"></h3>
 <div id="current-temp"></div>
 <hr>
 <div id="days">
@@ -84,6 +84,9 @@
 		var highestTemp = [];
 		var lowestTemp = [];
 		var weather = [];
+		var markerAddressArray;
+		var markerAddress = {};
+
 
     function getForecast(lng, lat) {
 		$.get('https://api.openweathermap.org/data/2.5/onecall', {
@@ -110,7 +113,7 @@
     function populateForecast() {
         $(".days").html();
         $("#current-temp").text();
-        $("#current-temp").text("Current temperature: " + currentTemp[0] + "°")
+        $("#current-temp").text("Current temperature: " + currentTemp[0] + "°");
         for (var i=0; i<5; i++) {
             $("#day" + (i+1)).html(
                 "<div class=\"highest-temp\">" + highestTemp[i] + "</div>\n" +
@@ -128,29 +131,51 @@
         marker.setLngLat(searchCoordinates);
 		map.setCenter(searchCoordinates)
         });
+		getAddressData();
 	}
 
+	//Creates marker at page load and places it on San Antonio by default
     var marker = new mapboxgl.Marker({draggable: true})
         .setLngLat([-98.5, 29.435])
         .addTo(map);
 
-
+    //Gets ingo info from the marker at page load and runs getForecast function
     markerLngLat.push(marker._lngLat.lng);
     markerLngLat.push(marker._lngLat.lat);
-
     getForecast(markerLngLat[0], markerLngLat[1]);
-
     map.setCenter(markerLngLat)
 
+    //Event listener for when the marker is dragged and dropped.
     marker.on("dragend", function(){
         markerLngLat = [];
         markerLngLat.push(marker._lngLat.lng);
         markerLngLat.push(marker._lngLat.lat)
         console.log(markerLngLat)
         getForecast(markerLngLat[0], markerLngLat[1]);
+		getAddressData();
     })
 
+    //Function uses data from the marker to create properties for markerAddress object. Invoked immediately at page load.
+    function getAddressData() {
+		reverseGeocode({lat: markerLngLat[1], lng: markerLngLat[0]}, MAPBOX_API_TOKEN).then(function (data) {
+			markerAddressArray = data.split(",");
+			markerAddress.country = markerAddressArray[markerAddressArray.length - 1].trim();
+			markerAddress.zipCode = markerAddressArray[markerAddressArray.length - 2].trim().split(" ")[1];
+			markerAddress.state = markerAddressArray[markerAddressArray.length - 2].trim().split(" ")[0];
+			markerAddress.city = markerAddressArray[markerAddressArray.length - 3].trim();
+			markerAddress.street = markerAddressArray[markerAddressArray.length - 4].trim();
+			updateCity();
+		})
+	}
+	getAddressData();
+
+	function updateCity(){
+        $("#city").html("");
+        $("#city").html(markerAddress.city);
+    }
+
     $("#search-btn").click(updateMarker);
+
 
     </script>
 
