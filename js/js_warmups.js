@@ -531,3 +531,31 @@ var users = [
 ];
 
 console.log(createFirstNamesArray(users));; // returns... ['Bob', 'Sally', 'Fred', 'Cathy', 'Joe']
+
+//-------------------------------------------------------------------
+//Mar 17
+
+
+function changeBackgroundRed(){
+	if(square.style.backgroundColor === "gray") {
+		square.style.backgroundColor = "red";
+	} else {
+		square.style.backgroundColor = "gray";
+	}
+};
+
+// //Vanilla JS:
+//
+//
+// var square = document.getElementById("square")
+// square.addEventListener('click', changeBackgroundRed)
+//
+
+
+// Using jQuery
+// $("#square").click(changeBackgroundRed);
+
+$("#reset").click(function(){
+	$("#square").css("background-color", "red");
+})
+
