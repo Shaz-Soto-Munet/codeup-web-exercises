@@ -79,8 +79,8 @@ const longestEmail = users.reduce((emailString, object)=>{
 //-----------------------------------------------------------------
 //Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
 
-const names = users.reduce((userNames, object)=>{
+let names = users.reduce((userNames, object)=>{
 	return userNames + ", " + object.name
 }, "");
 
-console.log(names);
+console.log(names.substring(2));
