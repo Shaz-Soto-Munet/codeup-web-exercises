@@ -559,3 +559,16 @@ $("#reset").click(function(){
 	$("#square").css("background-color", "red");
 })
 
+//------------------------------------------------------------------
+//Mar 21
+
+$(".square").on("click", function() {
+	$(this).css("background-color", "yellow");
+})
+
+$(".square").hover(function(){
+		$(this).css("background-color", "red")
+	}, function() {
+		$(this).css("background-color", "white");
+})
+
