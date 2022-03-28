@@ -572,3 +572,30 @@ $(".square").hover(function(){
 		$(this).css("background-color", "white");
 })
 
+//----------------------------------------------------------------
+
+function encodeStr(string){
+	let arrayOfCharacters = string.split("");
+	arrayOfCharacters.forEach(function(char, index){
+		if (char === "a" || char === "A"){
+			arrayOfCharacters[index] = "@";
+		} else if (char === "i" || char === "I"){
+			arrayOfCharacters[index] = "1";
+		} else if (char === "s" || char === "S"){
+			arrayOfCharacters[index] = "$";
+		}
+	})
+	let newString = arrayOfCharacters.join("");
+	return newString;
+}
+
+// ‘a’ or ‘A’ becomes ‘@’
+// ‘i’ or ‘I’ becomes ‘1’
+// ‘s’ or ‘S’ becomse ‘$’
+// encodeStr(‘apple’) // returns ‘@pple’
+// encodeStr(‘codeup’) // returns ‘codeup’
+// encodeStr(‘SASS’) // returns ‘$@$$’
+// encodeStr(‘bike’) // returns ‘b1ke’
+
+//------------------------------------------------------------------
+
