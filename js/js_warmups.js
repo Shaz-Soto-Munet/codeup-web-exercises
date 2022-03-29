@@ -599,3 +599,58 @@ function encodeStr(string){
 
 //------------------------------------------------------------------
 
+// Write a function, returnMostCommonVowel, that takes in a string and returns the most common vowel in the string.
+// 	Assume the characters in the string are all lowercase and only 'a' 'e' 'i' 'o' 'u' count as vowels. Return the most common vowel from the string.
+//
+// 	If the highest vowel count is shared between multiple vowels, return the first vowel alphabetically. (2 'a's and 2 'e's should 'a')
+//
+// If no vowels are in the string return false.
+
+function returnMostCommonVowel(string){
+	let arrayOfCharacters = string.split("");
+
+	// let vowel = arrayOfCharacters.reduce((accumulation,currentCharacter)=>{
+	//
+	// },"")
+	// if (vowel === ""){
+	// 	return false;
+	// } else {
+	// 	return vowel;
+	// }
+
+	let countA = 0;
+	let countE = 0;
+	let countI = 0;
+	let countO = 0;
+	let countU = 0;
+
+	arrayOfCharacters.forEach((element, index)=>{
+		if (element === "a"){
+			countA++;
+		} else if (element === "e"){
+			countE++;
+		} else if (element === "i"){
+			countI++;
+		} else if (element === "o"){
+			countO++;
+		} else if (element === "u"){
+			countU++;
+		}
+	})
+
+	if (countA === 0 && countE === 0 && countI === 0 && countO === 0 && countU === 0){
+		return false;
+	} else if (countA>=countE && countA>=countI && countA>=countO && countA>=countU){
+		return "a";
+	} else if (countE>=countA && countE>=countI && countE>=countO && countE>=countU){
+		return "e";
+	} else if (countI>=countA && countI>=countE && countI>=countO && countI>=countU){
+		return "i";
+	} else if (countO>=countA && countO>=countE && countO>=countI && countO>=countU){
+		return "o";
+	} else if (countU>=countA && countU>=countE && countU>=countI && countU>=countO){
+		return "u";
+	}
+
+}
+//-------------------------------------------------------------
