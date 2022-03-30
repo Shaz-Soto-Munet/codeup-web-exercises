@@ -624,7 +624,7 @@ function returnMostCommonVowel(string){
 	let countO = 0;
 	let countU = 0;
 
-	arrayOfCharacters.forEach((element, index)=>{
+	arrayOfCharacters.forEach((element)=>{
 		if (element === "a"){
 			countA++;
 		} else if (element === "e"){
@@ -654,3 +654,45 @@ function returnMostCommonVowel(string){
 
 }
 //-------------------------------------------------------------
+
+// Create a function, returnAvgAdminSalary, that takes in an array of users and returns the average salary of all admins. Round to the nearest dollar.
+
+
+
+const users2 = [
+	{
+		name: 'Fred',
+		isAdmin: true,
+		salary: 20000
+	},
+	{
+		name: 'Cathy',
+		isAdmin: false,
+		salary: 40000
+	},
+	{
+		name: 'Sally',
+		isAdmin: true,
+		salary: 80000
+	},
+	{
+		name: 'Kyle',
+		isAdmin: true,
+		salary: 50000
+	},
+	{
+		name: 'Cynthia',
+		isAdmin: false,
+		salary: 100000
+	}
+];
+
+function returnAvgAdminSalary(array) {
+	const admins = array.filter(user => user.isAdmin);
+	let  totalSalary = admins.reduce((total, user) => {
+		return user.salary + total;
+	}, 0)
+	return totalSalary / admins.length;
+}
+
+console.log(returnAvgAdminSalary(users2)); // returns 116666
